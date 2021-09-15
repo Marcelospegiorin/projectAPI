@@ -4,6 +4,7 @@ export const Container = styled.View`
     width: 100%
     height: 100%
     align-items: center
+    background-color: black
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -16,10 +17,11 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const TitleApp = styled.Text`
-    font-size: 40px
+    font-size: 38px
     color: #FFF
     font-family: Raleway_500Medium_Italic
-    margin-top: 100px
+    margin-top: 80px
+    margin-bottom: 20px
 `;
 
 export const SubText = styled.Text`
