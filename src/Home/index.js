@@ -1,5 +1,6 @@
 import React from 'react'
 import {Image} from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient';
 
 // ESTILIZAÇÃO
 
@@ -15,7 +16,10 @@ export default function index(navigation) {
 
     return (
 
-        <Container>
+        <LinearGradient
+            colors={['#1e278d', '#3e49d0', '#4e5bf1']}
+        >
+            <Container>
                 <TitleApp>League Of Guide</TitleApp>
                 <Image source={require('../../assets/lollogo.png')} style={{width: 100, height: 100}}/>
                 <Button>
@@ -27,7 +31,8 @@ export default function index(navigation) {
                 <Button>
                     <SubText>O jogo</SubText>
                 </Button>
-        </Container>
+            </Container>
+        </LinearGradient>
     )
 }
 
