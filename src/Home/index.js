@@ -1,6 +1,5 @@
 import React from 'react'
 import {Image} from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient';
 
 // ESTILIZAÇÃO
 
@@ -16,52 +15,28 @@ export default function index(navigation) {
 
     return (
 
-        <LinearGradient
-            colors={['#1e278d', '#3e49d0', '#4e5bf1']}
-        >
-            <Container>
-                <TitleApp>League Of Guide</TitleApp>
-                <Image source={require('../../assets/lollogo.png')} style={{width: 100, height: 100}}/>
+            <Container >
+                <TitleApp>Guia Of Legends</TitleApp>
+        
+                <Button>
+                    <SubText>Guia</SubText>
+                    <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                </Button>
+        
+                <Button>
+                    <SubText>O Game</SubText>
+                    <Image source={require('./../../assets/gamepad-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                </Button>
+                
                 <Button>
                     <SubText>Campeões</SubText>
+                    <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
+        
                 <Button>
-                    <SubText>Itens</SubText>
-                </Button>
-                <Button>
-                    <SubText>O jogo</SubText>
+                    <SubText>Dicas</SubText>
+                    <Image source={require('./../../assets/tips-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
             </Container>
-        </LinearGradient>
-    )
+    );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const ApiKey = 'RGAPI-b4515564-63e7-4878-aa97-a92b076ea8ee'
-  
-  const [summonerName, setSummonerName] = useState('')
-
-  const getSummoner = async () => {
-    const {data}  = await axios.get(`https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${ApiKey}`)
-    console.log(data)
-  }
-console.log(summonerName)*/

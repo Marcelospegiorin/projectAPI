@@ -2,6 +2,7 @@ import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 
 import Home from './src/Home'
+import Dicas from './scr/Dicas'
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ export default function MainStack() {
             }}
         >
             <Stack.Screen name="Home" component={Home}/> 
+            <Stack.Screen name="Dicas" component={Dicas}/>
         </Stack.Navigator>
     )
 }
