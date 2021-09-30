@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { Button } from '../Home/style'
+import { Button } from '../Campeoes/style'
 
 export default function index() {
     return (
