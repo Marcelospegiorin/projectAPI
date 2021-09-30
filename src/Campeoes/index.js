@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { Button } from '../Campeoes/style'
+import { Container, Button } from '../Campeoes/style'
 
 export default function index() {
     return (
