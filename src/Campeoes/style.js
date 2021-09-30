@@ -26,7 +26,8 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const ViewTitulo = styled.View`
-    
+    align-items: center
+    justify-content: center
 `;
 
 export const ListaCampeoes = styled.Text`
