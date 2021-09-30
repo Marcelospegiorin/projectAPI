@@ -31,5 +31,9 @@ export const ViewTitulo = styled.View`
 `;
 
 export const ListaCampeoes = styled.Text`
-    
+    font-size: 50px
+`;
+
+export const TextButton = styled.Text`
+    font-size: 10px
 `;
