@@ -2,7 +2,7 @@ import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 
 import Home from './src/Home'
-import Dicas from './scr/Dicas'
+import Dicas from './src/Dicas'
 
 const Stack = createStackNavigator();
 

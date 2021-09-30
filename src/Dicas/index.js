@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image} from 'react-native'
+import { StatusBar } from 'expo-status-bar'
 
 import {
     Container,
@@ -9,12 +9,12 @@ import {
     SubText
 } from './style'
 
-export function index(){
-
+export default function Dicas() {
     return(
         <Container>
+            <StatusBar style="light" hidden={true}/>
             <TitleApp>Dicas</TitleApp>
-            
+            <SubText>Test</SubText>
         </Container>
     );
 }
