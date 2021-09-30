@@ -8,8 +8,8 @@ export const Container = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: 250px
-    height: 100px
+    width: 125px
+    height: 50px
 
     margin-top: 20px
 
@@ -28,12 +28,20 @@ export const Button = styled.TouchableOpacity`
 export const ViewTitulo = styled.View`
     align-items: center
     justify-content: center
+    borderColor: #1ECEE7
+    borderWidth: 2px
+    border-radius: 7px
+    backgroundColor: #063C6A
+    margin-top: 8px
+    margin-bottom: 490px
 `;
 
 export const ListaCampeoes = styled.Text`
-    font-size: 50px
+    font-size: 40px
+    color: #CAA92E
 `;
 
 export const TextButton = styled.Text`
-    font-size: 10px
+    font-size: 20px
+    color: #CAA92E
 `;
