@@ -15,6 +15,9 @@ export default function Dicas() {
             <StatusBar style="light" hidden={true}/>
             <TitleApp>Dicas</TitleApp>
             <SubText>Test</SubText>
+            <SubView>
+                TESTE
+            </SubView>
         </Container>
     );
 }
