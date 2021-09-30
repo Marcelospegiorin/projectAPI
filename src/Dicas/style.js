@@ -8,10 +8,12 @@ export const Container = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: 250px
+    width: 150px
     height: 100px
 
     margin-top: 20px
+    margin-left: 10px
+    margin-right: 10px
 
     align-items: center
     justify-content: center
@@ -37,8 +39,17 @@ export const SubText = styled.Text`
 `;
 
 export const SubView = styled.View`
-    width: 100%
-    height: 200px
+    width: 85%
+    height: 250px
     align-items: center
     margin-top: 50px
+    margin-bottom: 50px
+    borderColor: #1ECEE7
+    borderWidth: 2px
+    border-radius: 15px
+`;
+
+export const SubButton = styled.View`
+    flex: 1
+    flexDirection: row
 `;
