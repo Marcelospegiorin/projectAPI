@@ -1,16 +1,31 @@
 import React from 'react'
-import { StatusBar } from 'expo-status-bar'
+import { ScrollView } from 'react-native';
 import { Container, Button, ViewTitulo, ListaCampeoes, TextButton } from './style'
+import { useNavigation } from '@react-navigation/core';
+import axios from 'axios';
 
 export default function index() {
+
+
+    const navigation = useNavigation()
+
+    function voltarPagina(){
+        navigation.goBack()
+    }
+
     return (
         <Container>
-            <StatusBar style="light" hidden={true}/>
             <ViewTitulo>
                 <ListaCampeoes>Lista de Campeões</ListaCampeoes>
             </ViewTitulo>
-            
-            <Button>
+            <ScrollView
+                showsHorizontalScrollIndicator={false}
+            >
+                
+            </ScrollView>
+            <Button
+                onPress={() => voltarPagina()}
+            >
                 <TextButton>Home</TextButton>
             </Button>
         </Container>
