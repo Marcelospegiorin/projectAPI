@@ -14,9 +14,8 @@ export default function MainStack() {
                 headerShown: false,
             }}
         >
-            <Stack.Screen name="Home" component={Home}/>
+            <Stack.Screen name="Home" component={Home}/> 
             <Stack.Screen name="Campeoes" component={Campeoes}/>
-            
         </Stack.Navigator>
     )
 }
