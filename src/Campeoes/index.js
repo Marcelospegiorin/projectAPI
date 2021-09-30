@@ -1,13 +1,12 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { Container, Button } from '../Campeoes/style'
+import { Container, Button, ListaCampeoes } from '../Campeoes/style'
 
 export default function index() {
     return (
         <Container>
-            <View>
-                <Text>Lista de Campeões</Text>
-            </View>
+            <ViewTitulo>
+                <ListaCampeoes>Lista de Campeões</ListaCampeoes>
+            </ViewTitulo>
             
             <Button>Home</Button>
         </Container>

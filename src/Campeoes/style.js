@@ -24,3 +24,11 @@ export const Button = styled.TouchableOpacity`
 
     flex-direction: row
 `;
+
+export const ListaCampeoes = styled.Text`
+    
+`;
+
+export const ViewTitulo = styled.View`
+    
+`;
