@@ -7,7 +7,6 @@ import {
     Container,
     TitleApp,
     Button,
-    SubView,
     SubText
 } from './style'
 
@@ -15,7 +14,7 @@ export default function index(navigation) {
 
     return (
 
-            <Container >
+            <Container>
                 <TitleApp>Guia Of Legends</TitleApp>
         
                 <Button>
