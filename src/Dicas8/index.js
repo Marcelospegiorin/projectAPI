@@ -19,25 +19,27 @@ export default function Dicas() {
     return(
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Dicas</TitleApp>
-            <SubText>Posições</SubText>
+            <TitleApp>Dica 8</TitleApp>
+            <SubText>Habilidades</SubText>
             <SubView>
-                <SubText>Top: fica na rota superior.</SubText>
-                <SubText>Mid: fica na rota do meio.</SubText>
-                <SubText>ADC: fica na rota inferior.</SubText>
-                <SubText>Suporte: acompanha o ADC.</SubText>
-                <SubText>Jungle: ficam nas selvas.</SubText>
+                <SubText>
+                    Defina uma posição para aprender a jogar, escolha um herói, 
+                    conheça as habilidades e pratique. 
+                    Cada Skill do personagem tem sua função específica 
+                    no combate: deixar todo mundo resistente, 
+                    iniciar uma briga, aplicar muito dano, paralisar os adversários, etc…
+                </SubText>
             </SubView>
             <SubButton>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Home')}
+                        navigation.navigate('Dicas7')}
                 >
-                    <Image source={require('./../../assets/home-icon2.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('./../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas2')}
+                        navigation.navigate('Dicas9')}
                 >
                     <Image source={require('./../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>

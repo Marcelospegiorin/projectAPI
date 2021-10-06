@@ -36,14 +36,14 @@ export const TitleApp = styled.Text`
 export const SubText = styled.Text`
     font-size: 23px
     color: #CAA92E
-    align-items: center
-    margin-bottom: 10px
+    margin-bottom: 5px
+    marginLeft: 10px
+    marginLeft: 5px
 `;
 
 export const SubView = styled.View`
     width: 85%
     height: 250px
-    align-items: center
     margin-top: 50px
     margin-bottom: 50px
     borderColor: #1ECEE7

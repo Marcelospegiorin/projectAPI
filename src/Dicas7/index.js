@@ -19,25 +19,26 @@ export default function Dicas() {
     return(
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Dicas</TitleApp>
-            <SubText>Posições</SubText>
+            <TitleApp>Dica 7</TitleApp>
+            <SubText>Itens</SubText>
             <SubView>
-                <SubText>Top: fica na rota superior.</SubText>
-                <SubText>Mid: fica na rota do meio.</SubText>
-                <SubText>ADC: fica na rota inferior.</SubText>
-                <SubText>Suporte: acompanha o ADC.</SubText>
-                <SubText>Jungle: ficam nas selvas.</SubText>
+                <SubText>
+                    Itens são muito importantes para deixar seu personagem forte. 
+                    Os iniciantes tem uma vantagem,
+                    durante o próprio jogo são mostrados itens favoráveis ao personagem. 
+                    Permitindo não gastar tanto tempo, no início, para estudar as fórmulas.
+                </SubText>
             </SubView>
             <SubButton>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Home')}
+                        navigation.navigate('Dicas6')}
                 >
-                    <Image source={require('./../../assets/home-icon2.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('./../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas2')}
+                        navigation.navigate('Dicas8')}
                 >
                     <Image source={require('./../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>

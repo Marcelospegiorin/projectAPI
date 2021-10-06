@@ -19,25 +19,26 @@ export default function Dicas() {
     return(
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Dicas</TitleApp>
-            <SubText>Posições</SubText>
+            <TitleApp>Dica 9</TitleApp>
+            <SubText>Ladrão</SubText>
             <SubView>
-                <SubText>Top: fica na rota superior.</SubText>
-                <SubText>Mid: fica na rota do meio.</SubText>
-                <SubText>ADC: fica na rota inferior.</SubText>
-                <SubText>Suporte: acompanha o ADC.</SubText>
-                <SubText>Jungle: ficam nas selvas.</SubText>
+                <SubText>
+                    Esta é uma regra que vale não só para o League of Legends,
+                    mas também para todos os outros jogos multiplayer. 
+                    Roubar o kill, ou a morte, de algum parceiro pode gerar
+                    uma briga desnecessária no meio da partida, portanto, tome cuidado!
+                </SubText>
             </SubView>
             <SubButton>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Home')}
+                        navigation.navigate('Dicas8')}
                 >
-                    <Image source={require('./../../assets/home-icon2.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('./../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas2')}
+                        navigation.navigate('Dicas10')}
                 >
                     <Image source={require('./../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>

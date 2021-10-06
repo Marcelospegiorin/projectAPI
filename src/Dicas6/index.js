@@ -19,25 +19,27 @@ export default function Dicas() {
     return(
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Dicas</TitleApp>
-            <SubText>Posições</SubText>
+            <TitleApp>Dica 6</TitleApp>
+            <SubText>Farme</SubText>
             <SubView>
-                <SubText>Top: fica na rota superior.</SubText>
-                <SubText>Mid: fica na rota do meio.</SubText>
-                <SubText>ADC: fica na rota inferior.</SubText>
-                <SubText>Suporte: acompanha o ADC.</SubText>
-                <SubText>Jungle: ficam nas selvas.</SubText>
+                <SubText>
+                Da metade para o final da partida é comum 
+                que você foque em ganks, destruir torres ou em matar o dragão. 
+                Tente se manter farmando em todo momento em que não 
+                estiver participando ativamente das lutas.
+                O dinheiro é sempre bem-vindo.
+                </SubText>
             </SubView>
             <SubButton>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Home')}
+                        navigation.navigate('Dicas5')}
                 >
-                    <Image source={require('./../../assets/home-icon2.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('./../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas2')}
+                        navigation.navigate('Dicas7')}
                 >
                     <Image source={require('./../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>

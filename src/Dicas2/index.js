@@ -19,25 +19,27 @@ export default function Dicas() {
     return(
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Dicas</TitleApp>
-            <SubText>Posições</SubText>
+            <TitleApp>Dica 2</TitleApp>
+            <SubText>Minimapa</SubText>
             <SubView>
-                <SubText>Top: fica na rota superior.</SubText>
-                <SubText>Mid: fica na rota do meio.</SubText>
-                <SubText>ADC: fica na rota inferior.</SubText>
-                <SubText>Suporte: acompanha o ADC.</SubText>
-                <SubText>Jungle: ficam nas selvas.</SubText>
+                <SubText>Sério, em LoL,
+                SEMPRE olhe 
+                para o minimapa.
+                Fique atento ao mínimo sinal de inimigos
+                aparecendo nele para reagir da
+                melhor forma possível. Jogadores são pegos de surpresa em 
+                ganks porque não olharam o minimapa.</SubText>
             </SubView>
             <SubButton>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Home')}
+                        navigation.navigate('Dicas')}
                 >
-                    <Image source={require('./../../assets/home-icon2.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('./../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas2')}
+                        navigation.navigate('Dicas3')}
                 >
                     <Image source={require('./../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
