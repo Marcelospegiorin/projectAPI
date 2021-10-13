@@ -5,7 +5,8 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/Home';
-import OGame from './src/OGame';
+import OGame from './src/OGame'
+
 
 const Stack = createStackNavigator();
 
@@ -24,9 +25,10 @@ export default function App() {
               component={Home}
           />
           <Stack.Screen
-              name="Campeoes"
+              name="OGame"
               component={OGame}
           />
+          
       </Stack.Navigator>
     </NavigationContainer>
    );

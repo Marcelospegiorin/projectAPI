@@ -12,7 +12,9 @@ import {
     SubText
 } from './style'
 
-export default function index(navigation) {
+export default function Home() {
+
+    const navigation = useNavigation()
 
     return (
 
@@ -24,7 +26,12 @@ export default function index(navigation) {
                     <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
         
-                <Button>
+                <Button
+                    onPress={() =>
+                    navigation.navigate('OGame')}
+                >
+                
+
                     <SubText>O Game</SubText>
                     <Image source={require('./../../assets/gamepad-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
