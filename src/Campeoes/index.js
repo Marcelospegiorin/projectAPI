@@ -4,8 +4,7 @@ import { Container, Button, ViewTitulo, ListaCampeoes, TextButton } from './styl
 import { useNavigation } from '@react-navigation/core';
 import axios from 'axios';
 
-export default function index() {
-
+export default function Campeoes() {
 
     const navigation = useNavigation()
 
