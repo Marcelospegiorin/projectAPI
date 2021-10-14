@@ -39,6 +39,30 @@ export default function Home() {
                 <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
             </Button>
             
+            <Button
+                onPress={() =>
+                navigation.navigate('Itens')}
+            >
+                <SubText>Itens</SubText>
+                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+            </Button>
+
+            <Button
+                onPress={() =>
+                navigation.navigate('Feiticos')}
+            >
+                <SubText>Feitiços de Invocador</SubText>
+                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+            </Button>
+
+            <Button
+                onPress={() =>
+                navigation.navigate('Runas')}
+            >
+                <SubText>Runas</SubText>
+                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+            </Button>
+
             <Button>
                 <SubText>Dicas</SubText>
                 <Image source={require('./../../assets/tips-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
