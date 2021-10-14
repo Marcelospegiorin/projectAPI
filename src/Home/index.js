@@ -52,7 +52,7 @@ export default function Home() {
                 navigation.navigate('Feiticos')}
             >
                 <SubText>Feitiços de Invocador</SubText>
-                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 0}}/>
             </Button>
 
             <Button

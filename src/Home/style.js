@@ -9,7 +9,7 @@ export const Container = styled.View`
 
 export const Button = styled.TouchableOpacity`
     width: 250px
-    height: 100px
+    height: 75px
 
     margin-top: 20px
 
@@ -28,7 +28,7 @@ export const Button = styled.TouchableOpacity`
 export const TitleApp = styled.Text`
     font-size: 40px
     color: #CAA92E
-    margin-top: 50px
+    margin-top: 10px
 `;
 
 export const SubText = styled.Text`
