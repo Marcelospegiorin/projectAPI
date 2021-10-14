@@ -17,7 +17,7 @@ export default function Home() {
     const navigation = useNavigation()
     
     return (
-        <Container >
+        <Container>
             <StatusBar style="light" hidden={true}/>
             <TitleApp>Guia Of Legends</TitleApp>
             
