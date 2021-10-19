@@ -14,6 +14,7 @@ import Dicas7 from './src/Dicas7';
 import Dicas8 from './src/Dicas8';
 import Dicas9 from './src/Dicas9';
 import Dicas10 from './src/Dicas10';
+import Items from './src/Items';
 
 
 const Stack = createStackNavigator();
@@ -71,6 +72,10 @@ export default function App() {
           <Stack.Screen
               name="Dicas10"
               component={Dicas10}
+          />
+          <Stack.Screen
+              name="Items"
+              component={Items}
           />
       </Stack.Navigator>
     </NavigationContainer>
