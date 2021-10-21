@@ -51,7 +51,7 @@ export default function Home() {
                 onPress={() =>
                 navigation.navigate('Feiticos')}
             >
-                <SubText>Feitiços de Invocador</SubText>
+                <SubText>Feitiços</SubText>
                 <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 0}}/>
             </Button>
 
