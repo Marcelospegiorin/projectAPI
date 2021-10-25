@@ -23,9 +23,7 @@ export default function OGame() {
         <TextoDoJogo> Cada campeão começa a missão com cinco habilidades próprias, e o invocador detém dois feitiços iniciais. A estratégia também é essencial para a utilização dos itens. </TextoDoJogo>
       </TextoGame>
 
-      <BlocoHome 
-        onPress={() => voltarPagina()}
-      >        
+      <BlocoHome onPress={() => voltarPagina()}>        
           <TextoHome>Home</TextoHome>        
       </BlocoHome>    
     
@@ -34,4 +32,4 @@ export default function OGame() {
   );
 }
 
-// CSS Interno
+
