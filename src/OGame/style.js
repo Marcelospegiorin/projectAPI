@@ -10,9 +10,12 @@ export const Container = styled.View`
 export const LeagueOfLegends = styled.View`
     background-color: #063C6A
     width: 90%
-    height: 120px
-    marginBottom: 30px    
-    justifyContent: center
+    height: 15% 
+    marginTop: 20px   
+    marginBottom: 20px
+    justifyContent:center
+    textAlign: center
+    marginLeft: 1px   
     borderWidth: 2px
     borderColor: #0DCEE9   
 
@@ -46,7 +49,8 @@ export const TextoGame = styled.View`
     background-color: #063C6A
     width: 95%
     height: 50%
-    marginBottom: 35px   
+    margin: 10px
+    marginBottom: 20px   
     justifyContent: center
     borderWidth: 1px
     borderColor: #0DCEE9
@@ -59,4 +63,6 @@ export const Lol = styled.Text`
     marginTop: 10px 
     marginLeft: 15px
 `;
+
+
   
