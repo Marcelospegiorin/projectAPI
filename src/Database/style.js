@@ -39,9 +39,8 @@ export const SubText = styled.Text`
 export const ButtonHome = styled.TouchableOpacity`
     width: 125px;
     height: 50px;
-    margin-top: 10px;
+    margin-top: 30px;
     align-items: center;
-    margin-bottom: 10px;
     justify-content: center;
     background-color: #063C6A;
     border-color: #1ECEE7;

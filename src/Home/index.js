@@ -18,7 +18,6 @@ export default function Home() {
     
     return (
         <Container>
-            <StatusBar style="light" hidden={true}/>
             <TitleView>
                 <Image source={require('./../../assets/league-of-legends-logo.jpg')} style={{width: 325, height: 175}} />
             </TitleView>
