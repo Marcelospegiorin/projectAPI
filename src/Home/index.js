@@ -22,50 +22,26 @@ export default function Home() {
             <TitleApp>Guia of Legends</TitleApp>
             
             <Button>
-                <SubText>Guia</SubText>
-                <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
-            </Button>
-            
-            <Button>
+                <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>O Game</SubText>
-                <Image source={require('./../../assets/gamepad-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+            </Button>
+
+            <Button>
+                <Image source={require('./../../assets/ojogo-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
+                <SubText>Guia</SubText>
             </Button>
                     
             <Button
                 onPress={() =>
-                navigation.navigate('Campeoes')}
+                navigation.navigate('Database')}
             >
-                <SubText>Campeões</SubText>
-                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
-            </Button>
-            
-            <Button
-                onPress={() =>
-                navigation.navigate('Itens')}
-            >
-                <SubText>Itens</SubText>
-                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
-            </Button>
-
-            <Button
-                onPress={() =>
-                navigation.navigate('Feiticos')}
-            >
-                <SubText>Feitiços</SubText>
-                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 0}}/>
-            </Button>
-
-            <Button
-                onPress={() =>
-                navigation.navigate('Runas')}
-            >
-                <SubText>Runas</SubText>
-                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                <Image source={require('./../../assets/runa-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
+                <SubText>Database</SubText>
             </Button>
 
             <Button>
+                <Image source={require('./../../assets/dicas-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>Dicas</SubText>
-                <Image source={require('./../../assets/tips-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
             </Button>
         </Container>
     );
