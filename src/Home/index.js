@@ -19,7 +19,7 @@ export default function Home() {
     return (
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Guia Of Legends</TitleApp>
+            <TitleApp>Guia of Legends</TitleApp>
             
             <Button>
                 <SubText>Guia</SubText>
