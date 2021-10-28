@@ -25,7 +25,7 @@ export const Button = styled.TouchableOpacity`
     flex-direction: row;
 `;
 
-export const TitleApp = styled.Text`
+export const TitleDatabase = styled.Text`
     font-size: 40px;
     color: #CAA92E;
     margin-top: 10px;

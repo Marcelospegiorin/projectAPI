@@ -7,7 +7,7 @@ import { StatusBar } from 'expo-status-bar'
 
 import {
     Container,
-    TitleApp,
+    TitleDatabase,
     Button,
     SubText,
     ButtonHome,
@@ -25,7 +25,7 @@ export default function Database() {
     return (
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Database</TitleApp>
+            <TitleDatabase>Database</TitleDatabase>
             
             <Button>
                 <SubText>Campeões</SubText>
