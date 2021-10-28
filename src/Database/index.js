@@ -9,13 +9,19 @@ import {
     Container,
     TitleApp,
     Button,
-    SubText
+    SubText,
+    ButtonHome,
+    TextButton
 } from './style'
 
 export default function Database() {
         
     const navigation = useNavigation()
     
+    function voltarPagina(){
+        navigation.goBack()
+    }
+
     return (
         <Container>
             <StatusBar style="light" hidden={true}/>
@@ -36,6 +42,12 @@ export default function Database() {
             <Button>
                 <SubText>Runas</SubText>
             </Button>
+
+            <ButtonHome
+                onPress={() => voltarPagina()}
+            >
+                <TextButton>Home</TextButton>
+            </ButtonHome>
 
         </Container>
     );
