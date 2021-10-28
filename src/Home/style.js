@@ -12,9 +12,9 @@ export const Button = styled.TouchableOpacity`
     height: 75px;
 
     margin-top: 20px;
+    padding-left: 20px;
 
     align-items: center;
-    justify-content: center;
 
     background-color: #063C6A;
 
@@ -25,10 +25,14 @@ export const Button = styled.TouchableOpacity`
     flex-direction: row;
 `;
 
-export const TitleApp = styled.Text`
-    font-size: 40px;
-    color: #CAA92E;
-    margin-top: 10px;
+export const TitleView = styled.View`
+    width: 100%;
+    height: 20%;
+
+    align-items: center;
+
+    margin-top: 40px;
+    margin-bottom: 60px;
 `;
 
 export const SubText = styled.Text`

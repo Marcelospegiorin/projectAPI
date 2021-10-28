@@ -12,9 +12,9 @@ export const Button = styled.TouchableOpacity`
     height: 75px;
 
     margin-top: 20px;
+    padding-left: 20px;
 
     align-items: center;
-    justify-content: center;
 
     background-color: #063C6A;
 

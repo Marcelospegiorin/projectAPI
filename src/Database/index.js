@@ -28,18 +28,22 @@ export default function Database() {
             <TitleDatabase>Database</TitleDatabase>
             
             <Button>
+                <Image source={require('./../../assets/campeoes-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>Campeões</SubText>
             </Button>
             
             <Button>
+                <Image source={require('./../../assets/itens-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>Itens</SubText>
             </Button>
 
             <Button>
+                <Image source={require('./../../assets/feiticos-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>Feitiços</SubText>
             </Button>
 
             <Button>
+                <Image source={require('./../../assets/runas-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>Runas</SubText>
             </Button>
 

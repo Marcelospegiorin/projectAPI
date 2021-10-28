@@ -7,7 +7,7 @@ import { StatusBar } from 'expo-status-bar'
 
 import {
     Container,
-    TitleApp,
+    TitleView,
     Button,
     SubText
 } from './style'
@@ -19,7 +19,9 @@ export default function Home() {
     return (
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Guia of Legends</TitleApp>
+            <TitleView>
+                <Image source={require('./../../assets/league-of-legends-logo.jpg')} style={{width: 325, height: 175}} />
+            </TitleView>
             
             <Button>
                 <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
