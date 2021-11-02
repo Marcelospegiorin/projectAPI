@@ -55,6 +55,18 @@ export const TextoGame = styled.View`
     borderWidth: 1px
     borderColor: #0DCEE9
   
+`;
+
+export const BlocoImagem = styled.View`
+    background-color: #063C6A
+    width: 95%
+    height: 50%
+    margin: 10px
+    marginBottom: 20px   
+    justifyContent: center
+    borderWidth: 1px
+    borderColor: #0DCEE9
+  
 `;  
 
 export const Lol = styled.Text`
