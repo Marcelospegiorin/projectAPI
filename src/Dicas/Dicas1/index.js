@@ -1,7 +1,6 @@
 import React from 'react'
-import { StatusBar } from 'expo-status-bar'
 import { useNavigation } from '@react-navigation/core'
-import {Image} from 'react-native'
+import {Image, View} from 'react-native'
 
 import {
     Container,
@@ -12,15 +11,16 @@ import {
     SubButton
 } from './style'
 
-export default function Dicas() {
+export default function Dicas1() {
 
     const navigation = useNavigation()
 
     return(
         <Container>
-            <StatusBar style="light" hidden={true}/>
-            <TitleApp>Dicas</TitleApp>
-            <SubText>Posições</SubText>
+            <View>
+                <TitleApp>Dicas</TitleApp>
+                <SubText>Posições</SubText>
+            </View>
             <SubView>
                 <SubText>Top: fica na rota superior.</SubText>
                 <SubText>Mid: fica na rota do meio.</SubText>
@@ -28,20 +28,22 @@ export default function Dicas() {
                 <SubText>Suporte: acompanha o ADC.</SubText>
                 <SubText>Jungle: ficam nas selvas.</SubText>
             </SubView>
-            <SubButton>
+            <View
+                style={{flexDirection: 'row', marginBottom: 20}}
+            >
                 <Button
                     onPress={() =>
                         navigation.navigate('Home')}
                 >
-                    <Image source={require('./../../assets/home-icon2.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('../../../assets/home-icon2.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
                 <Button
                     onPress={() =>
                         navigation.navigate('Dicas2')}
                 >
-                    <Image source={require('./../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('../../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
-            </SubButton>
+            </View>         
         </Container>
     );
 }

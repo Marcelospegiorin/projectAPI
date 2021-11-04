@@ -10,6 +10,15 @@ import Itens from './src/Items';
 import Feiticos from './src/Feiticos';
 import Runas from './src/Runas';
 import Dicas1 from './src/Dicas/Dicas1';
+import Dicas2 from './src/Dicas/Dicas2';
+import Dicas3 from './src/Dicas/Dicas3';
+import Dicas4 from './src/Dicas/Dicas4';
+import Dicas5 from './src/Dicas/Dicas5';
+import Dicas6 from './src/Dicas/Dicas6';
+import Dicas7 from './src/Dicas/Dicas7';
+import Dicas8 from './src/Dicas/Dicas8';
+import Dicas9 from './src/Dicas/Dicas9';
+import Dicas10 from './src/Dicas/Dicas10';
 
 const Stack = createStackNavigator();
 
@@ -47,9 +56,45 @@ export default function App() {
               name="Runas"
               component={Runas}
           />
-           <Stack.Screen
-              name="Dicas"
+          <Stack.Screen
+              name="Dicas1"
               component={Dicas1}
+          />
+          <Stack.Screen
+              name="Dicas2"
+              component={Dicas2}
+          />
+          <Stack.Screen
+              name="Dicas3"
+              component={Dicas3}
+          />
+          <Stack.Screen
+              name="Dicas4"
+              component={Dicas4}
+          />
+          <Stack.Screen
+              name="Dicas5"
+              component={Dicas5}
+          />
+          <Stack.Screen
+              name="Dicas6"
+              component={Dicas6}
+          />
+          <Stack.Screen
+              name="Dicas7"
+              component={Dicas7}
+          />
+          <Stack.Screen
+              name="Dicas8"
+              component={Dicas8}
+          />
+          <Stack.Screen
+              name="Dicas9"
+              component={Dicas9}
+          />
+          <Stack.Screen
+              name="Dicas10"
+              component={Dicas10}
           />
           <Stack.Screen
               name="Items"

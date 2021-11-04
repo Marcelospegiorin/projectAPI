@@ -39,7 +39,10 @@ export default function Home() {
                 <SubText>Database</SubText>
             </Button>
 
-            <Button>
+            <Button
+                onPress={() => 
+                navigation.navigate('Dicas1')}
+            >
                 <Image source={require('./../../assets/dicas-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>Dicas</SubText>
             </Button>

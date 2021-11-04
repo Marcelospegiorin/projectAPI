@@ -19,28 +19,28 @@ export default function Dicas() {
     return(
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Dica 7</TitleApp>
-            <SubText>Itens</SubText>
+            <TitleApp>Dica 9</TitleApp>
+            <SubText>Ladrão</SubText>
             <SubView>
                 <SubText>
-                    Itens são muito importantes para deixar seu personagem forte. 
-                    Os iniciantes tem uma vantagem,
-                    durante o próprio jogo são mostrados itens favoráveis ao personagem. 
-                    Permitindo não gastar tanto tempo, no início, para estudar as fórmulas.
+                    Esta é uma regra que vale não só para o League of Legends,
+                    mas também para todos os outros jogos multiplayer. 
+                    Roubar o kill, ou a morte, de algum parceiro pode gerar
+                    uma briga desnecessária no meio da partida, portanto, tome cuidado!
                 </SubText>
             </SubView>
             <SubButton>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas6')}
+                        navigation.navigate('Dicas8')}
                 >
-                    <Image source={require('./../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('../../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas8')}
+                        navigation.navigate('Dicas10')}
                 >
-                    <Image source={require('./../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('../../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
             </SubButton>
         </Container>

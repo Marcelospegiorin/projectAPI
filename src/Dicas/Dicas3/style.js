@@ -53,6 +53,6 @@ export const SubView = styled.View`
 `;
 
 export const SubButton = styled.View`
-    flex: 1
+    margin-bottom: 20px
     flexDirection: row
 `;

@@ -19,29 +19,29 @@ export default function Dicas() {
     return(
         <Container>
             <StatusBar style="light" hidden={true}/>
-            <TitleApp>Dica 4</TitleApp>
-            <SubText>Creep Score</SubText>
+            <TitleApp>Dica 6</TitleApp>
+            <SubText>Farme</SubText>
             <SubView>
                 <SubText>
-                Creep Score, é o número de minions que VOCÊ matou. 
-                Seu CS só aumenta se o seu campeão foi o 
-                responsável pelo golpe que matou o minion. 
-                Seu foco nunca deve ser atacar loucamente 
-                os minions inimigos, mas apenas dar o último golpe.
+                Da metade para o final da partida é comum 
+                que você foque em ganks, destruir torres ou em matar o dragão. 
+                Tente se manter farmando em todo momento em que não 
+                estiver participando ativamente das lutas.
+                O dinheiro é sempre bem-vindo.
                 </SubText>
             </SubView>
             <SubButton>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas3')}
+                        navigation.navigate('Dicas5')}
                 >
-                    <Image source={require('./../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('../../../assets/back-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
                 <Button
                     onPress={() =>
-                        navigation.navigate('Dicas5')}
+                        navigation.navigate('Dicas7')}
                 >
-                    <Image source={require('./../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('../../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
                 </Button>
             </SubButton>
         </Container>
