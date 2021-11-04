@@ -23,6 +23,7 @@ import {
 
 export default function Items() {
   const [items, setItems] = useState([]);
+
   const navigation = useNavigation();
 
   const [loading ,setLoading] = useState(true)
@@ -68,7 +69,7 @@ export default function Items() {
               <ViewImage>
                 <ItemImage
                   source={{
-                    uri: `http://ddragon.leagueoflegends.com/cdn/11.20.1/img/item/${item[1].image.full}`,
+                    uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${item[1].image.full}`,
                   }}
                 />
               </ViewImage>
@@ -81,19 +82,19 @@ export default function Items() {
         </WrapScroll>
       }
 
-    <Modal 
-      animationType="slide"
-      visible={modalIsVisible}
-      transparent={true}
-      onRequestClose={() => setModalIsVisible(false)}
-    >
-      <ModalContent>
-        <ContainerModal>
-          <ItemName>{itemSelected[1].gold.base}</ItemName>
-          <ItemName>{itemSelected[1].plaintext}</ItemName>
-        </ContainerModal>
-      </ModalContent>
-    </Modal>
+      <Modal 
+        animationType="slide"
+        visible={modalIsVisible}
+        transparent={true}
+        onRequestClose={() => setModalIsVisible(false)}
+      >
+        <ModalContent>
+          <ContainerModal>
+            <ItemName>{itemSelected[1].gold.base}</ItemName>
+            <ItemName>{itemSelected[1].plaintext}</ItemName>
+          </ContainerModal>
+        </ModalContent>
+      </Modal>
 
     </Container>
   );
