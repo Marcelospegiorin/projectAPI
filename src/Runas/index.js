@@ -34,7 +34,7 @@ export default function Runas() {
   useEffect(() => {
     async function loadItems() {
       const { data } = await axios.get(
-        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/item.json'
+        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/runesReforged.json'
       );
       setLoading(false)
       setItems(await Object.entries(data.data));
@@ -45,8 +45,7 @@ export default function Runas() {
   const [itemSelected, setItemSelected] = useState([
     {teste: ''},
     {name: ''},
-    {gold: ''},
-    {plaintext: ''}
+    {shortDesc: ''}
   ])
 
   console.log(itemSelected)
@@ -93,9 +92,8 @@ export default function Runas() {
       >
         <ModalContent>
           <ContainerModal>
-            <NomeRuna>Nome do item: {itemSelected[1].name}</NomeRuna>
-            <ItemName>Preço total: {itemSelected[1].gold.total}</ItemName>
-            <ItemName>Descrição: {itemSelected[1].plaintext}</ItemName>
+            <NomeRuna>Nome da runa: {itemSelected[1].name}</NomeRuna>
+            <ItemName>Descrição: {itemSelected[1].shortDesc}</ItemName>
           </ContainerModal>
         </ModalContent>
       </Modal>
