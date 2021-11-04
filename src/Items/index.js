@@ -44,7 +44,8 @@ export default function Items() {
   const [itemSelected, setItemSelected] = useState([
     {teste: ''},
     {name: ''},
-    {gold: ''}
+    {gold: ''},
+    {plaintext: ''}
   ])
 
   console.log(itemSelected)
