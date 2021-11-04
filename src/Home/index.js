@@ -1,7 +1,6 @@
 import React from 'react'
 import {Image} from 'react-native'
 import { useNavigation } from '@react-navigation/core';
-import { StatusBar } from 'expo-status-bar'
 
 // ESTILIZAÇÃO
 
