@@ -25,14 +25,10 @@ export const Button = styled.TouchableOpacity`
     flex-direction: row;
 `;
 
-export const TitleView = styled.View`
-    width: 100%;
-    height: 20%;
-
-    align-items: center;
-
-    margin-top: 40px;
-    margin-bottom: 60px;
+export const TitleDatabase = styled.Text`
+    font-size: 40px;
+    color: #CAA92E;
+    margin-top: 10px;
 `;
 
 export const SubText = styled.Text`
@@ -40,9 +36,20 @@ export const SubText = styled.Text`
     color: #CAA92E;
 `;
 
-export const SubView = styled.View`
-    width: 100%;
-    height: 200px;
+export const ButtonHome = styled.TouchableOpacity`
+    width: 125px;
+    height: 50px;
+    margin-top: 30px;
     align-items: center;
-    margin-top: 50px;
+    justify-content: center;
+    background-color: #063C6A;
+    border-color: #1ECEE7;
+    border-width: 2px;
+    border-radius: 15px;
+    flex-direction: row;
+`;
+
+export const TextButton = styled.Text`
+    font-size: 20px;
+    color: #CAA92E;
 `;

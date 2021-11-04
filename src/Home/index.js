@@ -1,14 +1,13 @@
 import React from 'react'
 import {Image} from 'react-native'
 import { useNavigation } from '@react-navigation/core';
-import { StatusBar } from 'expo-status-bar'
+
 // ESTILIZAÇÃO
 
 import {
     Container,
-    TitleApp,
+    TitleView,
     Button,
-    SubView,
     SubText
 } from './style'
 
@@ -17,34 +16,32 @@ export default function Home() {
     const navigation = useNavigation()
     
     return (
-        <Container >
-            <StatusBar style="light" hidden={true}/>
-            <TitleApp>Guia Of Legends</TitleApp>
+        <Container>
+            <TitleView>
+                <Image source={require('./../../assets/league-of-legends-logo.jpg')} style={{width: 325, height: 175}} />
+            </TitleView>
             
             <Button>
-                <SubText>Guia</SubText>
-                <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
-            </Button>
-            
-            <Button>
+                <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>O Game</SubText>
-                <Image source={require('./../../assets/gamepad-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+            </Button>
+
+            <Button>
+                <Image source={require('./../../assets/ojogo-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
+                <SubText>Guia</SubText>
             </Button>
                     
             <Button
                 onPress={() =>
-                navigation.navigate('Items')}
+                navigation.navigate('Database')}
             >
-                <SubText>Campeões</SubText>
-                <Image source={require('./../../assets/trofeu-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                <Image source={require('./../../assets/runa-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
+                <SubText>Database</SubText>
             </Button>
-            
-            <Button
-                onPress={() =>
-                navigation.navigate('Dicas')}
-            >
+
+            <Button>
+                <Image source={require('./../../assets/dicas-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>Dicas</SubText>
-                <Image source={require('./../../assets/tips-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
             </Button>
         </Container>
     );
