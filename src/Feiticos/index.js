@@ -43,7 +43,6 @@ export default function Feiticos() {
   }, []);
 
   const [itemSelected, setItemSelected] = useState([
-    {teste: ''},
     {name: ''},
     {description: ''},
     {cooldown: ''}

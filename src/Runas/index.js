@@ -43,7 +43,6 @@ export default function Runas() {
   }, []);
 
   const [itemSelected, setItemSelected] = useState([
-    {teste: ''},
     {name: ''},
     {shortDesc: ''}
   ])
@@ -71,7 +70,7 @@ export default function Runas() {
               <ViewImage>
                 <ItemImage
                   source={{
-                    uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${item[1].image.full}`,
+                    uri: ` http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/runesReforged.json/${itemSelected[1].image.full}`,
                   }}
                 />
               </ViewImage>
