@@ -10,6 +10,7 @@ import {
   WrapItem,
   ItemImage,
   ItemName,
+  NomeItem,
   ViewNameItem,
   ViewImage,
   ContainerLoading,
@@ -92,9 +93,9 @@ export default function Items() {
       >
         <ModalContent>
           <ContainerModal>
-            <ItemName>{itemSelected[1].name}</ItemName>
-            <ItemName>{itemSelected[1].gold.base}</ItemName>
-            <ItemName>{itemSelected[1].plaintext}</ItemName>
+            <NomeItem>Nome do item: {itemSelected[1].name}</NomeItem>
+            <ItemName>Preço total: {itemSelected[1].gold.total}</ItemName>
+            <ItemName>Descrição: {itemSelected[1].plaintext}</ItemName>
           </ContainerModal>
         </ModalContent>
       </Modal>
