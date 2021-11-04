@@ -13,6 +13,7 @@ import {
 
 export default function Dicas() {
 
+
     const navigation = useNavigation()
 
     return(

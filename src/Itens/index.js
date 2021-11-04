@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/core';
 import { ActivityIndicator } from 'react-native-paper';
+import { LogBox } from 'react-native';
 
 import {
   Container,
@@ -18,11 +19,16 @@ import {
 import {
   Modal,
   ModalContent,
-  ContainerModal
+  ContainerModal,
+  NomeItem
 } from './modal'
 
 export default function Items() {
+
+  LogBox.ignoreLogs(['Each']);
+
   const [items, setItems] = useState([]);
+
   const navigation = useNavigation();
 
   const [loading ,setLoading] = useState(true)
@@ -32,7 +38,7 @@ export default function Items() {
   useEffect(() => {
     async function loadItems() {
       const { data } = await axios.get(
-        'http://ddragon.leagueoflegends.com/cdn/11.20.1/data/pt_BR/item.json'
+        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/item.json'
       );
       setLoading(false)
       setItems(await Object.entries(data.data));
@@ -42,7 +48,9 @@ export default function Items() {
 
   const [itemSelected, setItemSelected] = useState([
     {teste: ''},
-    {gold: ''}
+    {name: ''},
+    {gold: ''},
+    {plaintext: ''},
   ])
 
   console.log(itemSelected)
@@ -68,7 +76,7 @@ export default function Items() {
               <ViewImage>
                 <ItemImage
                   source={{
-                    uri: `http://ddragon.leagueoflegends.com/cdn/11.20.1/img/item/${item[1].image.full}`,
+                    uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${item[1].image.full}`,
                   }}
                 />
               </ViewImage>
@@ -81,19 +89,19 @@ export default function Items() {
         </WrapScroll>
       }
 
-    <Modal 
-      animationType="slide"
-      visible={modalIsVisible}
-      transparent={true}
-      onRequestClose={() => setModalIsVisible(false)}
-    >
-      <ModalContent>
-        <ContainerModal>
-          <ItemName>{itemSelected[1].gold.base}</ItemName>
-          <ItemName>{itemSelected[1].plaintext}</ItemName>
-        </ContainerModal>
-      </ModalContent>
-    </Modal>
+      <Modal 
+        animationType="slide"
+        visible={modalIsVisible}
+        transparent={true}
+        onRequestClose={() => setModalIsVisible(false)}
+      >
+        <ModalContent>
+          <ContainerModal>
+            <NomeItem>Nome do item: {itemSelected[1].name}</NomeItem>
+            <ItemName>Descrição: {itemSelected[1].plaintext}</ItemName>
+          </ContainerModal>
+        </ModalContent>
+      </Modal>
 
     </Container>
   );

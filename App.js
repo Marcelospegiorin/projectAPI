@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/Home';
 import Database from './src/Database';
 import Campeoes from './src/Campeoes';
-import Itens from './src/Items';
+import Itens from './src/Itens';
 import Feiticos from './src/Feiticos';
 import Runas from './src/Runas';
 import Dicas1 from './src/Dicas/Dicas1';
