@@ -10,6 +10,7 @@ import {
   WrapItem,
   SpellImage,
   SpellName,
+  NomeFeitico,
   ViewNameSpell,
   ViewImage,
   ContainerLoading,
@@ -92,9 +93,9 @@ export default function Feiticos() {
       >
         <ModalContent>
           <ContainerModal>
-            <SpellName>Nome: {itemSelected[1].name}</SpellName>
+            <NomeFeitico>Nome do feitiço: {itemSelected[1].name}</NomeFeitico>
             <SpellName>Descrição: {itemSelected[1].description}</SpellName>
-            <SpellName>Tempo de recarga: {itemSelected[1].cooldown}</SpellName>
+            <SpellName>Tempo de recarga: {itemSelected[1].cooldown} segundos</SpellName>
           </ContainerModal>
         </ModalContent>
       </Modal>

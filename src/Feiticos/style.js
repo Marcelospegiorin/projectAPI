@@ -65,3 +65,11 @@ export const SpellName = styled.Text`
   color: #CAA92E;
   margin-top: 5px;
 `;
+
+export const NomeFeitico = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  margin-top: 5px;
+  font-size: 30px;
+  margin-bottom: 20px;
+`;
