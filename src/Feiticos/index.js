@@ -1,88 +1,104 @@
-import React from 'react'
-import { Container, Button, ViewTitulo, FeiticosInvocador, TextButton } from './style'
-import { useNavigation } from '@react-navigation/core';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/core';
+import { ActivityIndicator } from 'react-native-paper';
 
 import {
-    Modal,
-    ModalContent,
-    ContainerModal
-  } from './modal'
+  Container,
+  Title,
+  WrapScroll,
+  WrapItem,
+  SpellImage,
+  SpellName,
+  ViewNameSpell,
+  ViewImage,
+  ContainerLoading,
+} from './style';
+
+import {
+  Modal,
+  ModalContent,
+  ContainerModal
+} from './modal';
 
 export default function Feiticos() {
+  const [items, setItems] = useState([]);
 
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-    const [items, setItems] = useState([]);
+  const [loading ,setLoading] = useState(true)
 
-    const [loading ,setLoading] = useState(true)
+  const [modalIsVisible, setModalIsVisible] = useState(false)
 
-    const [modalIsVisible, setModalIsVisible] = useState(false)
-
-    useEffect(() => {
-        async function loadItems() {
-          const { data } = await axios.get(
-            'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/summoner.json'
-          );
-          setLoading(false)
-          setItems(await Object.entries(data.data));
-        }
-        loadItems();
-      }, []);
-
-    const [itemSelected, setItemSelected] = useState([
-    {teste: ''},
-    {gold: ''}
-    ])
-
-    function OpenModal(item) {
-        setItemSelected(item)
-        setModalIsVisible(true)
+  useEffect(() => {
+    async function loadItems() {
+      const { data } = await axios.get(
+        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/summoner.json'
+      );
+      setLoading(false)
+      setItems(await Object.entries(data.data));
     }
+    loadItems();
+  }, []);
 
-    return (
-        <Container>
-            <Title>Itens</Title>
-            {loading == true
-            ?
-                <ContainerLoading>
-                <ActivityIndicator size={100} color='#CAA92E' animating={true}/>
-                </ContainerLoading>
-            :
-                <WrapScroll>
+  const [itemSelected, setItemSelected] = useState([
+    {teste: ''},
+    {name: ''},
+    {description: ''},
+    {cooldown: ''}
+  ])
 
-                {items.map(item => (
-                    <WrapItem onPress={() => OpenModal(item)}>
-                    <ViewImage>
-                        <ItemImage
-                        source={{
-                            uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${item[1].image.full}`,
-                        }}
-                        />
-                    </ViewImage>
-                    
-                    <ViewNameItem>
-                        <ItemName>{item[1].name}</ItemName>
-                    </ViewNameItem>
-                    </WrapItem>
-                ))}
-                </WrapScroll>
-            }
+  console.log(itemSelected)
 
-            <Modal 
-                animationType="slide"
-                visible={modalIsVisible}
-                transparent={true}
-                onRequestClose={() => setModalIsVisible(false)}
-            >
-                <ModalContent>
-                <ContainerModal>
-                    <ItemName>{itemSelected[1].name}</ItemName>
-                    <ItemName>{itemSelected[1].description}</ItemName>
-                    <ItemName>{itemSelected[1].cooldown}</ItemName>
-                </ContainerModal>
-                </ModalContent>
-            </Modal>
-        </Container>
-    );
+  function OpenModal(item) {
+    setItemSelected(item)
+    setModalIsVisible(true)
+  }
+
+  return (
+    <Container>
+      <Title>Feitiços de Invocador</Title>
+      {loading == true
+      ?
+        <ContainerLoading>
+         <ActivityIndicator size={100} color='#CAA92E' animating={true}/>
+        </ContainerLoading>
+      :
+        <WrapScroll>
+
+          {items.map(item => (
+            <WrapItem onPress={() => OpenModal(item)}>
+              <ViewImage>
+                <SpellImage
+                  source={{
+                    uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${item[1].image.full}`,
+                  }}
+                />
+              </ViewImage>
+            
+              <ViewNameSpell>
+                <SpellName>{item[1].name}</SpellName>
+              </ViewNameSpell>
+            </WrapItem>
+          ))}
+        </WrapScroll>
+      }
+
+      <Modal 
+        animationType="slide"
+        visible={modalIsVisible}
+        transparent={true}
+        onRequestClose={() => setModalIsVisible(false)}
+      >
+        <ModalContent>
+          <ContainerModal>
+            <SpellName>{itemSelected[1].name}</SpellName>
+            <SpellName>{itemSelected[1].description}</SpellName>
+            <SpellName>{itemSelected[1].cooldown}</SpellName>
+          </ContainerModal>
+        </ModalContent>
+      </Modal>
+
+    </Container>
+  );
 }

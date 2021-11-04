@@ -19,7 +19,7 @@ import {
   Modal,
   ModalContent,
   ContainerModal
-} from './modal'
+} from './modal';
 
 export default function Items() {
   const [items, setItems] = useState([]);
@@ -33,7 +33,7 @@ export default function Items() {
   useEffect(() => {
     async function loadItems() {
       const { data } = await axios.get(
-        'http://ddragon.leagueoflegends.com/cdn/11.20.1/data/pt_BR/item.json'
+        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/item.json'
       );
       setLoading(false)
       setItems(await Object.entries(data.data));
