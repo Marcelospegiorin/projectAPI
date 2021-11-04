@@ -92,9 +92,9 @@ export default function Feiticos() {
       >
         <ModalContent>
           <ContainerModal>
-            <SpellName>{itemSelected[1].name}</SpellName>
-            <SpellName>{itemSelected[1].description}</SpellName>
-            <SpellName>{itemSelected[1].cooldown}</SpellName>
+            <SpellName>Nome: {itemSelected[1].name}</SpellName>
+            <SpellName>Descrição: {itemSelected[1].description}</SpellName>
+            <SpellName>Tempo de recarga: {itemSelected[1].cooldown}</SpellName>
           </ContainerModal>
         </ModalContent>
       </Modal>
