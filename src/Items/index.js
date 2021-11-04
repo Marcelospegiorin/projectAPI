@@ -43,6 +43,7 @@ export default function Items() {
 
   const [itemSelected, setItemSelected] = useState([
     {teste: ''},
+    {name: ''},
     {gold: ''}
   ])
 
@@ -90,6 +91,7 @@ export default function Items() {
       >
         <ModalContent>
           <ContainerModal>
+            <ItemName>{itemSelected[1].name}</ItemName>
             <ItemName>{itemSelected[1].gold.base}</ItemName>
             <ItemName>{itemSelected[1].plaintext}</ItemName>
           </ContainerModal>
