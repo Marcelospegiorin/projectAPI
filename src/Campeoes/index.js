@@ -40,8 +40,8 @@ export default function Campeoes() {
   }, []);
 
   const listaFiltrada = nomeFiltrado
-    ? champion.filter(x =>
-        x[1].name.toLowerCase().includes(nomeFiltrado.toLowerCase())
+    ? champion.filter(champs =>
+        champs[1].name.toLowerCase().includes(nomeFiltrado.toLowerCase())
       )
   : champion;
 

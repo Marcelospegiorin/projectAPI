@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/core';
 import { StatusBar } from 'expo-status-bar'
 import React from 'react';
 import 'react-native-gesture-handler';
@@ -9,6 +10,7 @@ import Campeoes from './src/Campeoes';
 import Itens from './src/Itens';
 import Feiticos from './src/Feiticos';
 import Runas from './src/Runas';
+import OGame from './src/OGame'
 import Dicas1 from './src/Dicas/Dicas1';
 import Dicas2 from './src/Dicas/Dicas2';
 import Dicas3 from './src/Dicas/Dicas3';
@@ -99,6 +101,10 @@ export default function App() {
           <Stack.Screen
               name="Items"
               component={Itens}
+          />
+          <Stack.Screen
+              name="OGame"
+              component={OGame}
           />
       </Stack.Navigator>
     </NavigationContainer>

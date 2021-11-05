@@ -21,7 +21,10 @@ export default function Home() {
                 <Image source={require('./../../assets/league-of-legends-logo.jpg')} style={{width: 325, height: 175}} />
             </TitleView>
             
-            <Button>
+            <Button
+                onPress={() =>
+                navigation.navigate('OGame')}
+            >
                 <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>O Game</SubText>
             </Button>

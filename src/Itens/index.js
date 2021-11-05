@@ -23,7 +23,7 @@ import {
   NomeItem
 } from './modal'
 
-export default function Items() {
+export default function Itens() {
 
   LogBox.ignoreLogs(['Each']);
 
@@ -50,7 +50,7 @@ export default function Items() {
     {teste: ''},
     {name: ''},
     {gold: ''},
-    {plaintext: ''},
+    {plaintext: ''}
   ])
 
   console.log(itemSelected)
@@ -85,7 +85,8 @@ export default function Items() {
                 <ItemName>{item[1].name}</ItemName>
               </ViewNameItem>
             </WrapItem>
-          ))}
+          )
+          )}
         </WrapScroll>
       }
 
