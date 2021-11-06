@@ -23,7 +23,7 @@ import {
 } from './modal';
 
 export default function Runas() {
-  const [items, setItems] = useState([]);
+  const [runas, setRunas] = useState([]);
 
   const navigation = useNavigation();
 
@@ -37,7 +37,7 @@ export default function Runas() {
         'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/runesReforged.json'
       );
       setLoading(false)
-      setItems(await Object.entries(data.data));
+      setItems(data);
     }
     loadItems();
   }, []);
@@ -56,7 +56,7 @@ export default function Runas() {
 
   return (
     <Container>
-      <Title>Itens</Title>
+      <Title>Runas</Title>
       {loading == true
       ?
         <ContainerLoading>
@@ -65,18 +65,14 @@ export default function Runas() {
       :
         <WrapScroll>
 
-          {items.map(item => (
+          {runas.map(item => (
             <WrapItem onPress={() => OpenModal(item)}>
               <ViewImage>
-                <ItemImage
-                  source={{
-                    uri: ` http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/runesReforged.json/${itemSelected[1].image.full}`,
-                  }}
-                />
+                
               </ViewImage>
             
               <ViewNameItem>
-                <ItemName>{item[1].name}</ItemName>
+                <ItemName>{item.name}</ItemName>
               </ViewNameItem>
             </WrapItem>
           ))}
