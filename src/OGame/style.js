@@ -34,7 +34,8 @@ export const BlocoHome = styled.TouchableOpacity`
     marginTop: 10px
     justifyContent:center
     borderWidth: 1px
-    borderColor: #0DCEE9 
+    borderColor: #0DCEE9
+    
 `;
 
 export const TextoHome = styled.Text`
@@ -43,27 +44,47 @@ export const TextoHome = styled.Text`
     fontSize: 25px
 `;
 
-export const TextoGame = styled.View`
+export const BlocoGame = styled.View`
     background-color: #063C6A
     width: 95%
     height: 420px
+    marginTop: 10px
     marginBottom: 20px   
     justifyContent: center
     borderWidth: 1px
     borderColor: #0DCEE9
     padding: 10px
 `;
+export const BlocoTituloSummoner = styled.View`    
+    width: 50%
+    height: 55px
+    marginLeft: 100px
+    marginBottom: 10px     
+
+`
+export const BlocoTituloCrystal = styled.View`    
+    width: 50%
+    height: 55px
+    marginLeft: 100px
+    marginBottom: 10px     
+    
+`
 
 export const BlocoImagem = styled.View`
     background-color: #063C6A
     width: 95%
     height: 50%
-    marginBottom: 20px   
+    marginBottom: 1px   
     justifyContent: center
     borderWidth: 1px
     borderColor: #0DCEE9
   
-`;  
+`;
+
+
+
+
+
 
 export const Lol = styled.Text`
     color: #F6CB33 
