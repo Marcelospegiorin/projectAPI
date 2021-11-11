@@ -37,7 +37,7 @@ export default function Runas() {
         'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/runesReforged.json'
       );
       setLoading(false)
-      setItems(data);
+      setRunas(data);
     }
     loadItems();
   }, []);
@@ -64,16 +64,19 @@ export default function Runas() {
         </ContainerLoading>
       :
         <WrapScroll>
-
           {runas.map(item => (
+
             <WrapItem onPress={() => OpenModal(item)}>
               <ViewImage>
-                
+                <ItemImage
+                  source={{
+                    uri: `https://ddragon.canisback.com/img/${item.icon}`,
+                  }}
+                />
+                <ItemName>{item.name}</ItemName>
               </ViewImage>
             
-              <ViewNameItem>
-                <ItemName>{item.name}</ItemName>
-              </ViewNameItem>
+              
             </WrapItem>
           ))}
         </WrapScroll>
@@ -87,8 +90,8 @@ export default function Runas() {
       >
         <ModalContent>
           <ContainerModal>
-            <NomeRuna>Nome da runa: {itemSelected[1].name}</NomeRuna>
-            <ItemName>Descrição: {itemSelected[1].shortDesc}</ItemName>
+            <NomeRuna>Nome da runa: </NomeRuna>
+            <ItemName>Descrição: </ItemName>
           </ContainerModal>
         </ModalContent>
       </Modal>

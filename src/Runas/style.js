@@ -32,8 +32,8 @@ export const WrapScroll = styled.View`
 
 export const WrapItem = styled.TouchableOpacity`
   padding: 10px;
-  width: 45%;
-  height: 150px;
+  width: 90%;
+  height: 75px;
   margin-bottom: 4%;
   align-items: center;
   border: 2px #1BCCE5 solid;
@@ -41,8 +41,10 @@ export const WrapItem = styled.TouchableOpacity`
 `;
 
 export const ItemImage = styled.Image`
-  height: 70px;
-  width: 70px;
+  height: 40px;
+  width: 40px;
+  margin-left: 30px;
+  margin-right: 15px;
 `;
 
 export const ViewNameItem = styled.View`
@@ -54,9 +56,10 @@ export const ViewNameItem = styled.View`
 
 export const ViewImage = styled.View`
   width: 100%;
-  height: 70%;
-  justify-content: center;
+  height: 90%;
+  
   align-items: center;
+  flex-direction: row;
 `;
 
 
@@ -64,6 +67,7 @@ export const ItemName = styled.Text`
   text-align: center;
   color: #CAA92E;
   margin-top: 5px;
+  font-size: 25px;
 `;
 
 export const NomeRuna = styled.Text`
