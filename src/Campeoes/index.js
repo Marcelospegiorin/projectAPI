@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ActivityIndicator } from 'react-native-paper';
-import {LogBox, View} from 'react-native'
+import {LogBox, View, FlatList} from 'react-native'
 
 import {
   Container,
@@ -18,6 +18,12 @@ import {
   Input
 } from './style';
 
+import {
+  Modal,
+  ModalContent,
+  ContainerModal
+} from './modal'
+
 
 export default function Campeoes() {
 
@@ -25,6 +31,8 @@ export default function Campeoes() {
   const [champion, setChampions] = useState([]);
   const [nomeFiltrado, setNomeFiltrado] = useState('')
   const [loading ,setLoading] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
+  const [nameChampion , setNameChampion] = useState('')
 
   LogBox.ignoreLogs(['Each']);
 
@@ -44,6 +52,20 @@ export default function Campeoes() {
         champs[1].name.toLowerCase().includes(nomeFiltrado.toLowerCase())
       )
   : champion;
+
+
+  // FUNÇÃO PARA ABRIR O MODAL
+
+  const [championSkins, setChampionsSkins] = useState([])
+
+  async function openModal(item) {
+    const  { teste }  = (item[1].name)
+    const { data } = await axios.get(
+      `http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/champion/${item[1].name}.json`
+    );
+    setChampionsSkins(await Object.entries(data.data.teste));
+    setIsVisible(!isVisible)
+  }
 
   return (
     <Container>
@@ -65,7 +87,9 @@ export default function Campeoes() {
         <WrapScroll>
 
           {listaFiltrada.map(item => (
-            <WrapItem >
+            <WrapItem 
+              onPress={() => openModal(item)}
+            >
               <ViewImage>
                 <ItemImage
                   source={{
@@ -82,6 +106,34 @@ export default function Campeoes() {
           ))}
         </WrapScroll>
       }
+
+    <Modal
+      visible={isVisible}
+      transparent={true}
+      onRequestClose={() => setIsVisible(!isVisible)}
+    >
+      <ModalContent>
+        <ContainerModal>
+          <FlatList 
+            data={championSkins}
+            showsVerticalScrollIndicator={false}
+            scrollEnabled={true}
+            renderItem={({item, key}) =>
+              <ViewImage>
+                <ItemImage
+                  key={key}
+                  source={{
+                    uri: `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${nameChampion}_0.jpg`,
+                  }}
+                />
+              </ViewImage>
+            }
+          />
+        </ContainerModal>
+      </ModalContent>
+    </Modal>
+
     </Container>
+    
   );
 }
