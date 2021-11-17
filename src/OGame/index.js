@@ -127,7 +127,7 @@ export default function OGame() {
         
         <ConfettiCannon
           count={250}
-          origin={{ x: 0, y: 0 }}
+          origin={{ x: -10, y: -10 }}
           autoStart={false}
           ref={confettiRef}
           explosionSpeed='1000'
