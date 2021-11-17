@@ -13,13 +13,19 @@ import {
   ViewNameItem,
   ViewImage,
   ContainerLoading,
+  ItemTitulo,
+  ItemName2,
+  Input,
+  InputView,
+  InputSubView,
+  ItemIcon,
 } from './style';
 
 import {
   Modal,
   ModalContent,
-  ContainerModal
-} from './modal'
+  ContainerModal,
+} from './modal';
 
 export default function Items() {
   const [items, setItems] = useState([]);
@@ -27,12 +33,14 @@ export default function Items() {
 
   const [loading ,setLoading] = useState(true)
 
+  const [itemFiltrado, setItemFiltrado] = useState('')
   const [modalIsVisible, setModalIsVisible] = useState(false)
+
 
   useEffect(() => {
     async function loadItems() {
       const { data } = await axios.get(
-        'http://ddragon.leagueoflegends.com/cdn/11.20.1/data/pt_BR/item.json'
+        'https://ddragon.canisback.com/11.22.1/data/pt_BR/item.json'
       );
       setLoading(false)
       setItems(await Object.entries(data.data));
@@ -40,14 +48,18 @@ export default function Items() {
     loadItems();
   }, []);
 
+  const listaFiltrada = itemFiltrado
+    ? items.filter(itens =>
+        itens[1].name.toLowerCase().includes(itemFiltrado.toLowerCase())
+      )
+  : items;
+
   const [itemSelected, setItemSelected] = useState([
-    {teste: ''},
-    {gold: ''}
+    {name: ''},
+    {gold: ''},
   ])
-
-  console.log(itemSelected)
-
   function OpenModal(item) {
+    console.log(item)
     setItemSelected(item)
     setModalIsVisible(true)
   }
@@ -55,6 +67,14 @@ export default function Items() {
   return (
     <Container>
       <Title>Itens</Title>
+      <InputView>
+        <InputSubView>
+          <Input 
+            placeholder='Insira o nome do item'
+            onChangeText={(text) => setItemFiltrado(text)}
+          />
+        </InputSubView>
+      </InputView>
       {loading == true
       ?
         <ContainerLoading>
@@ -63,8 +83,8 @@ export default function Items() {
       :
         <WrapScroll>
 
-          {items.map(item => (
-            <WrapItem onPress={() => OpenModal(item)}>
+          {listaFiltrada.map(item => (
+            <WrapItem onPress={() => OpenModal(item)} key={item.name}>
               <ViewImage>
                 <ItemImage
                   source={{
@@ -80,21 +100,29 @@ export default function Items() {
           ))}
         </WrapScroll>
       }
-
-    <Modal 
-      animationType="slide"
-      visible={modalIsVisible}
-      transparent={true}
-      onRequestClose={() => setModalIsVisible(false)}
-    >
-      <ModalContent>
-        <ContainerModal>
-          <ItemName>{itemSelected[1].gold.base}</ItemName>
-          <ItemName>{itemSelected[1].plaintext}</ItemName>
-        </ContainerModal>
-      </ModalContent>
-    </Modal>
-
+    {
+      itemSelected[1].image ? 
+      (
+        <Modal 
+          animationType="slide"
+          visible={modalIsVisible}
+          transparent={true}
+          onRequestClose={() => setModalIsVisible(false)}
+          onDismiss={() => setModalIsVisible(false)}
+        >
+          <ModalContent>
+            <ContainerModal>
+              <ItemTitulo>{itemSelected[1].name}</ItemTitulo>
+              <ItemIcon source={{
+                  uri: `http://ddragon.leagueoflegends.com/cdn/11.20.1/img/item/${itemSelected[1].image.full}`,
+              }}/>
+              <ItemName2>Preço de compra: {itemSelected[1].gold.base} de ouro</ItemName2>
+              <ItemName2>Descrição: {itemSelected[1].plaintext}</ItemName2>
+            </ContainerModal>
+          </ModalContent>
+        </Modal>
+      ) : null
+    }
     </Container>
   );
 }

@@ -35,13 +35,13 @@ export default function Dicas1() {
                     onPress={() =>
                         navigation.navigate('Home')}
                 >
-                    <Image source={require('../../../assets/home-icon2.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('../../../assets/home-icon2.png')} style={{width: 50, height: 50,}}/>
                 </Button>
                 <Button
                     onPress={() =>
                         navigation.navigate('Dicas2')}
                 >
-                    <Image source={require('../../../assets/next-icon.png')} style={{width: 50, height: 50, marginLeft: 10}}/>
+                    <Image source={require('../../../assets/next-icon.png')} style={{width: 50, height: 50,}}/>
                 </Button>
             </View>         
         </Container>

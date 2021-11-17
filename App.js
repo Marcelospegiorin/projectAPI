@@ -19,6 +19,8 @@ import Dicas7 from './src/Dicas/Dicas7';
 import Dicas8 from './src/Dicas/Dicas8';
 import Dicas9 from './src/Dicas/Dicas9';
 import Dicas10 from './src/Dicas/Dicas10';
+import Arvore from './src/Runas/Arvore';
+import ComoUsar from './src/Runas/ComoUsar';
 
 const Stack = createStackNavigator();
 
@@ -99,6 +101,14 @@ export default function App() {
           <Stack.Screen
               name="Items"
               component={Itens}
+          />
+          <Stack.Screen
+              name="Arvore"
+              component={Arvore}
+          />
+          <Stack.Screen
+              name="ComoUsar"
+              component={ComoUsar}
           />
       </Stack.Navigator>
     </NavigationContainer>

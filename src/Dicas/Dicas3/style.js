@@ -44,7 +44,7 @@ export const SubText = styled.Text`
 export const SubView = styled.View`
     width: 85%
     height: 250px
-    margin-top: 50px
+    margin-top: 30px
     margin-bottom: 50px
     borderColor: #1ECEE7
     borderWidth: 2px

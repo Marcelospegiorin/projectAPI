@@ -7,6 +7,7 @@ import Campeoes from './src/Campeoes';
 import Items from './src/Items';
 import Feiticos from './src/Feiticos';
 import Runas from './src/Runas';
+import Arvore from './src/Runas/Arvore';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ export default function MainStack() {
             <Stack.Screen name="Itens" component={Items}/>
             <Stack.Screen name="Feiticos" component={Feiticos}/>
             <Stack.Screen name="Runas" component={Runas}/>
+            <Stack.Screen name="Arvore" component={Arvore}/>
         </Stack.Navigator>
     )
 }
