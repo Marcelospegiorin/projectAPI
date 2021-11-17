@@ -32,7 +32,8 @@ export const BlocoHome = styled.TouchableOpacity`
     background-color: #063C6A
     width: 40%
     height: 55px
-    marginTop: 10px
+    marginTop: 50px
+    marginLeft: 125px
     justifyContent:center
     borderWidth: 1px
     borderRadius: 15px
@@ -87,9 +88,7 @@ export const BlocoImagem = styled.View`
     height: 50%
     marginBottom: 1px   
     justifyContent: center
-    borderWidth: 1px
-    borderRadius: 4px
-    borderColor: #0DCEE9
+    
   
 `;
 
@@ -105,5 +104,7 @@ export const Divisor = styled.View`
     width: 25%
     padding: 1px
 `;
+
+
 
   
