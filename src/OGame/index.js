@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import { useNavigation } from '@react-navigation/core';
 import { Container, LeagueOfLegends, TextoDoJogo, BlocoHome, TextoHome, BlocoGame, BlocoTituloCrystal,BlocoTituloTwisted, BlocoImagem, Lol, BlocoTituloSummoner, Divisor} from './style'
 
-import {ScrollView, Image, View} from 'react-native';
+import {ScrollView, Image, View, StyleSheet, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
+import ConfettiCannon from 'react-native-confetti-cannon';
 
 export default function OGame() {
   
@@ -12,6 +13,9 @@ export default function OGame() {
     function voltarPagina(){
         navigation.goBack()
     }
+//Chamando constante para o confetti.
+  const confettiRef = useRef();
+  const [confettiAnswer, setConfettiAnswer] = useState('');
   
   return (
     <Container>           
@@ -34,7 +38,7 @@ export default function OGame() {
 
         <Divisor></Divisor>
         <BlocoImagem style={{flex:1}}>        
-          <Image style={{width:367, height:182}} source={require('../../assets/summoners.png')}        
+          <Image style={{width:391, height:182}} source={require('../../assets/summoners.png')}        
           />                      
         </BlocoImagem>        
         
@@ -50,7 +54,7 @@ export default function OGame() {
 
         <Divisor></Divisor>
         <BlocoImagem style={{flex:1}}>     
-        <Image style={{width:367, height:182}} source={require('../../assets/crystal-scar_redim.png')}></Image>
+        <Image style={{width:391, height:182}} source={require('../../assets/crystal-scar_redim.png')}></Image>
         </BlocoImagem>
         <BlocoGame>
           <BlocoTituloCrystal>     
@@ -63,26 +67,102 @@ export default function OGame() {
         
         <Divisor></Divisor>
         <BlocoImagem style={{flex:1}}>
-        <Image style={{width:367, height:182}} source={require('../../assets/twisted_treeline_mapa.png')}></Image>
+        <Image style={{width:391, height:182}} source={require('../../assets/twisted_treeline_mapa.png')}></Image>
         </BlocoImagem>
         <BlocoGame>
           <BlocoTituloTwisted>     
           <TextoDoJogo>TWISTED TREELINE</TextoDoJogo>
           </BlocoTituloTwisted>       
-          <TextoDoJogo> Este mapa possui duas rotas para que o objetivo seja alcançado, ou seja, a destruição do Nexus do oponente. Para concluir esse objetivo os jogadores devem passar por uma área com monstros além de batalhar contra os campeões da equipe rival.</TextoDoJogo>
-          <TextoDoJogo> Neste mapa há uma criatura bônus que, se derrotada, concede à equipe vitoriosa uma habilidade de passar pelas rotas sem precisar batalhar. </TextoDoJogo>                 
+          <TextoDoJogo> Também é uma mapa desabilitado, utilizado especialmente para um evento específico.Possui duas rotas para que o objetivo seja alcançado, ou seja, a destruição do Nexus do oponente. Para concluir esse objetivo os jogadores deveriam passar por uma área com monstros além de batalhar contra os campeões da equipe rival.</TextoDoJogo>
+          <TextoDoJogo> Neste mapa havia uma criatura bônus que, se derrotada, concedia à equipe vitoriosa uma habilidade de passar pelas rotas sem precisar batalhar. </TextoDoJogo>                 
         </BlocoGame>
+
+
+        <Divisor></Divisor>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 20,
+              marginVertical: 6,
+              fontWeight: '400',
+              color: '#F6CB33',
+              textAlign: 'center',
+              marginTop: 1, 
+            }}
+          >
+            Qual dos mapas anteriores foi desativado, mas mantém recursos no universo Lol?
+
+          </Text>
+          <TextInput
+            style={{
+              width: '100%',
+              height: 40,
+              backgroundColor: '#f1f3f6',
+              paddingHorizontal: 10,
+              borderRadius: 4,
+              marginTop: 10,
+            }}
+            placeholder={'Digite aqui sua resposta'}
+            onChangeText={(text) => setConfettiAnswer(text)}
+          />
+          <TouchableOpacity
+            style={styles.submitButton}
+            onPress={() => {
+              if (confettiAnswer.trim().toLowerCase() === 'crystal scar') {
+                confettiRef.current.start(); Alert.alert('Resposta correta!!!');
+              } else {
+                Alert.alert('Esta não é a resposta correta.');
+              }
+            }}
+          >
+            <Text style={styles.submitButtonText}>Verificar</Text>
+          </TouchableOpacity>
+        </View>
         
-        </View>  
+        <ConfettiCannon
+          count={250}
+          origin={{ x: 0, y: 0 }}
+          autoStart={false}
+          ref={confettiRef}
+          explosionSpeed='1000'
+          fallSpeed='3500'
+        />         
+
+        </View>       
+
       </ScrollView>
       
-      <BlocoHome onPress={() => voltarPagina()}>        
-          <TextoHome>Home</TextoHome>        
-      </BlocoHome> 
+       
       
        
     </Container>
+    
   );
+  
 }
+const styles = StyleSheet.create({
+  submitButton: {
+    width: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    paddingVertical: 10,
+    backgroundColor: '#EE5A24',
+    borderRadius: 10, 
+    marginTop: 10,
+    marginLeft: 110,
+    marginBottom: 30,
+  },
+  submitButtonText: {
+    fontWeight: '500',
+    color: '#ffff',
+    fontSize: 20,
+  },
+})
 
 
