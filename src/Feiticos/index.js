@@ -1,32 +1,104 @@
-import React from 'react'
-import { ScrollView } from 'react-native';
-import { Container, Button, ViewTitulo, FeiticosInvocador, TextButton } from './style'
-import { useNavigation } from '@react-navigation/core';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/core';
+import { ActivityIndicator } from 'react-native-paper';
+
+import {
+  Container,
+  Title,
+  WrapScroll,
+  WrapItem,
+  SpellImage,
+  SpellName,
+  NomeFeitico,
+  ViewNameSpell,
+  ViewImage,
+  ContainerLoading,
+} from './style';
+
+import {
+  Modal,
+  ModalContent,
+  ContainerModal
+} from './modal';
 
 export default function Feiticos() {
+  const [items, setItems] = useState([]);
 
-    const navigation = useNavigation()
+  const navigation = useNavigation();
 
-    function voltarPagina(){
-        navigation.goBack()
+  const [loading ,setLoading] = useState(true)
+
+  const [modalIsVisible, setModalIsVisible] = useState(false)
+
+  useEffect(() => {
+    async function loadItems() {
+      const { data } = await axios.get(
+        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/summoner.json'
+      );
+      setLoading(false)
+      setItems(await Object.entries(data.data));
     }
+    loadItems();
+  }, []);
 
-    return (
-        <Container>
-            <ViewTitulo>
-                <FeiticosInvocador>Feitiços de Invocador</FeiticosInvocador>
-            </ViewTitulo>
-            <ScrollView
-                showsHorizontalScrollIndicator={false}
-            >
-                
-            </ScrollView>
-            <Button
-                onPress={() => voltarPagina()}
-            >
-                <TextButton>Home</TextButton>
-            </Button>
-        </Container>
-    );
+  const [itemSelected, setItemSelected] = useState([
+    {name: ''},
+    {description: ''},
+    {cooldown: ''}
+  ])
+
+  console.log(itemSelected)
+
+  function OpenModal(item) {
+    setItemSelected(item)
+    setModalIsVisible(true)
+  }
+
+  return (
+    <Container>
+      <Title>Feitiços de Invocador</Title>
+      {loading == true
+      ?
+        <ContainerLoading>
+         <ActivityIndicator size={100} color='#CAA92E' animating={true}/>
+        </ContainerLoading>
+      :
+        <WrapScroll>
+
+          {items.map(item => (
+            <WrapItem onPress={() => OpenModal(item)}>
+              <ViewImage>
+                <SpellImage
+                  source={{
+                    uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${item[1].image.full}`,
+                  }}
+                />
+              </ViewImage>
+            
+              <ViewNameSpell>
+                <SpellName>{item[1].name}</SpellName>
+              </ViewNameSpell>
+            </WrapItem>
+          ))}
+        </WrapScroll>
+      }
+
+      <Modal 
+        animationType="slide"
+        visible={modalIsVisible}
+        transparent={true}
+        onRequestClose={() => setModalIsVisible(false)}
+      >
+        <ModalContent>
+          <ContainerModal>
+            <NomeFeitico>Nome do feitiço: {itemSelected[1].name}</NomeFeitico>
+            <SpellName>Descrição: {itemSelected[1].description}</SpellName>
+            <SpellName>Tempo de recarga: {itemSelected[1].cooldown} segundos</SpellName>
+          </ContainerModal>
+        </ModalContent>
+      </Modal>
+
+    </Container>
+  );
 }

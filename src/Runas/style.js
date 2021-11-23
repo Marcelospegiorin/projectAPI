@@ -39,7 +39,6 @@ export const WrapItem = styled.TouchableOpacity`
   border: 2px #1BCCE5 solid;
   border-radius: 10px;
   flex-direction: row;
-  
 `;
 
 export const ItemImage = styled.Image`

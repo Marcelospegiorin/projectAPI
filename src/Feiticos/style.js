@@ -1,45 +1,75 @@
-import styled from "styled-components";
+import styled from 'styled-components/native';
 
-export const Container = styled.View`
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    background-color: #011425;
+export const Title = styled.Text`
+  color: #CAA92E;
+  font-size: 40px;
+  text-align: center;
+  background-color: #011425;
+  padding: 20px;
 `;
 
-export const Button = styled.TouchableOpacity`
-    width: 125px;
-    height: 50px;
-    margin-top: 10px;
-    align-items: center;
-    margin-bottom: 10px;
-    justify-content: center;
-    background-color: #063C6A;
-    border-color: #1ECEE7;
-    border-width: 2px;
-    border-radius: 15px;
-    flex-direction: row;
+export const Container = styled.ScrollView`
+  width: 100%;
+  height: 100%;
+  background-color: #011425;
 `;
 
-export const ViewTitulo = styled.View`
-    align-items: center;
-    justify-content: center;
-    border-color: #1ECEE7;
-    border-width: 2px;
-    border-radius: 7px;
-    background-color: #063C6A;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    width: 90%;
-    height: 60px;
+export const ContainerLoading = styled.View`
+  width: 100%;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  background-color: #011425;
 `;
 
-export const FeiticosInvocador = styled.Text`
-    font-size: 33px;
-    color: #CAA92E;
+export const WrapScroll = styled.View`
+  background: #011425;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
 `;
 
-export const TextButton = styled.Text`
-    font-size: 20px;
-    color: #CAA92E;
+export const WrapItem = styled.TouchableOpacity`
+  padding: 10px;
+  width: 45%;
+  height: 150px;
+  margin-bottom: 4%;
+  align-items: center;
+  border: 2px #1BCCE5 solid;
+  border-radius: 10px;
+`;
+
+export const SpellImage = styled.Image`
+  height: 70px;
+  width: 70px;
+`;
+
+export const ViewNameSpell = styled.View`
+  width: 100%;
+  height: 30%;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ViewImage = styled.View`
+  width: 100%;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+`;
+
+
+export const SpellName = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  margin-top: 5px;
+`;
+
+export const NomeFeitico = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  margin-top: 5px;
+  font-size: 30px;
+  margin-bottom: 20px;
 `;

@@ -4,8 +4,8 @@ export const Modal = styled.Modal`
 `;
 
 export const ModalContent = styled.View`
-    flex: 1
-    justify-content: flex-end
+    flex: 1;
+    justify-content: flex-end;
 `;
 
 export const ContainerModal = styled.View`
