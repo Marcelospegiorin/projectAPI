@@ -63,13 +63,27 @@ export const ViewImage = styled.View`
 export const SpellName = styled.Text`
   text-align: center;
   color: #CAA92E;
+  font-size: 15px
   margin-top: 5px;
+`;
+
+export const SpellName2 = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  margin-top: 10px
+  font-size: 23px
 `;
 
 export const NomeFeitico = styled.Text`
   text-align: center;
   color: #CAA92E;
-  margin-top: 5px;
-  font-size: 30px;
-  margin-bottom: 20px;
+  font-size: 40px
+  margin-bottom: 35px
+  textDecorationLine: underline
+`;
+
+export const ItemIcon = styled.Image`
+  width: 100px
+  height: 100px
+  margin-bottom: 15px
 `;

@@ -6,8 +6,8 @@ export const Modal = styled.Modal`
 export const ModalContent = styled.View`
     flex: 1;
     justify-content: flex-end;
-    margin-left: 19px
-    margin-right: 19px
+    margin-left: 10px
+    margin-right: 10px
 `;
 
 export const ContainerModal = styled.View`

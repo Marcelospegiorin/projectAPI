@@ -14,6 +14,8 @@ import {
   ViewNameSpell,
   ViewImage,
   ContainerLoading,
+  ItemIcon,
+  SpellName2
 } from './style';
 
 import {
@@ -48,8 +50,6 @@ export default function Feiticos() {
     {cooldown: ''}
   ])
 
-  console.log(itemSelected)
-
   function OpenModal(item) {
     setItemSelected(item)
     setModalIsVisible(true)
@@ -67,7 +67,10 @@ export default function Feiticos() {
         <WrapScroll>
 
           {items.map(item => (
-            <WrapItem onPress={() => OpenModal(item)}>
+            <WrapItem onPress={() => 
+              OpenModal(item) }
+              key={item.name}
+            >
               <ViewImage>
                 <SpellImage
                   source={{
@@ -75,7 +78,6 @@ export default function Feiticos() {
                   }}
                 />
               </ViewImage>
-            
               <ViewNameSpell>
                 <SpellName>{item[1].name}</SpellName>
               </ViewNameSpell>
@@ -83,22 +85,27 @@ export default function Feiticos() {
           ))}
         </WrapScroll>
       }
-
-      <Modal 
-        animationType="slide"
-        visible={modalIsVisible}
-        transparent={true}
-        onRequestClose={() => setModalIsVisible(false)}
-      >
-        <ModalContent>
-          <ContainerModal>
-            <NomeFeitico>Nome do feitiço: {itemSelected[1].name}</NomeFeitico>
-            <SpellName>Descrição: {itemSelected[1].description}</SpellName>
-            <SpellName>Tempo de recarga: {itemSelected[1].cooldown} segundos</SpellName>
-          </ContainerModal>
-        </ModalContent>
-      </Modal>
-
+      {
+        itemSelected[1].image ? (
+            <Modal 
+              animationType="slide"
+              visible={modalIsVisible}
+              transparent={true}
+              onRequestClose={() => setModalIsVisible(false)}
+            >
+              <ModalContent>
+                <ContainerModal>
+                  <NomeFeitico>Nome do feitiço: {itemSelected[1].name}</NomeFeitico>
+                  <ItemIcon source={{
+                        uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${itemSelected[1].image.full}`,
+                  }}/>
+                  <SpellName2>Descrição: {itemSelected[1].description}</SpellName2>
+                  <SpellName2>Tempo de recarga: {itemSelected[1].cooldown} segundos</SpellName2>
+                </ContainerModal>
+              </ModalContent>
+            </Modal>
+          ) : null
+        }
     </Container>
   );
 }

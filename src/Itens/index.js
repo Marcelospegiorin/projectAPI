@@ -65,7 +65,6 @@ export default function Itens() {
     {gold: ''},
   ])
   function OpenModal(item) {
-    console.log(item)
     setItemSelected(item)
     setModalIsVisible(true)
   }

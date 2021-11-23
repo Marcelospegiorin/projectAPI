@@ -12,7 +12,7 @@ export const ContainerModal = styled.View`
     border-top-left-radius: 20px;
     border-top-right-radius: 10px;
     padding: 10px 20px 40px 20px;
-    background-color: #063C6A;
+    background-color: #011425;
     min-height: 430px;
     align-items: center;
 `;

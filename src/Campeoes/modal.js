@@ -8,7 +8,7 @@ export const ModalContent = styled.View`
     align-items: center
     justify-content: center
     padding: 10px
-    background-color: rgba(0, 0, 0, 0.9)
+    background-color: #011425
 `;
 
 export const ContainerModal = styled.View`
@@ -24,7 +24,7 @@ export const SkinWrapper = styled.View`
     height: 360px
     margin-bottom: 15px
     justify-content: center
-    border: 2px #fff solid
+    border: 2px #1BCCE5 solid
     padding: 20px
     border-radius: 10px
 `;

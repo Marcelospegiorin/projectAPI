@@ -117,7 +117,7 @@ export default function OGame() {
               if (confettiAnswer.trim().toLowerCase() === 'crystal scar') {
                 confettiRef.current.start(); Alert.alert('Resposta correta!!!');
               } else {
-                Alert.alert('Esta não é a resposta correta.');
+                Alert.alert('Resposta Incorreta.');
               }
             }}
           >

@@ -20,12 +20,6 @@ import {
 
 export default function Arvore() {
 
-  function getText(html){
-    var divContainer= document.createElement("div");
-    divContainer.innerHTML = html;
-    return divContainer.textContent || divContainer.innerText || "";
-  }
-
     const route = useRoute()
     const {params:{arvore}} = route
 
@@ -47,7 +41,6 @@ export default function Arvore() {
                           slot.runes.map((rune) => (
                             <TouchableOpacity
                               onPress={() => {
-                                console.log(rune)
                                 setModalIsVisible(true)
                                 setSelectRune(rune)
                               }}

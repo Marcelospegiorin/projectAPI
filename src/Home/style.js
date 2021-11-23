@@ -33,6 +33,7 @@ export const TitleView = styled.View`
 
     margin-top: 40px;
     margin-bottom: 60px;
+    
 `;
 
 export const SubText = styled.Text`
@@ -45,4 +46,11 @@ export const SubView = styled.View`
     height: 200px;
     align-items: center;
     margin-top: 50px;
+`;
+
+export const Image = styled.Image`
+    width: 100%
+    height: 135%
+    padding: 10px
+
 `;

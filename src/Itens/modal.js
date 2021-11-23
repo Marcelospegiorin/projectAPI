@@ -12,9 +12,13 @@ export const ContainerModal = styled.View`
     border-top-left-radius: 20px
     border-top-right-radius: 10px
     padding: 10px 20px 40px 20px
-    background-color: #063C6A
-    min-height: 430px
+    background-color: #011425;
+    min-height: 400px
     align-items: center
+    border: 2px #1BCCE5 solid
+    border-radius: 10px
+    marginRight: 10px
+    marginLeft: 10px
 `;
 
 export const NomeItem = styled.Text`
@@ -23,10 +27,5 @@ export const NomeItem = styled.Text`
   margin-top: 5px;
   font-size: 30px;
   margin-bottom: 20px;
-    background-color: #011425;
-    min-height: 400px
-    align-items: center
-    border: 2px #1BCCE5 solid
-    border-radius: 10px
     
 `;

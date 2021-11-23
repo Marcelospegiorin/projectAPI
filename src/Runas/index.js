@@ -50,8 +50,6 @@ export default function Runas() {
     {shortDesc: ''}
   ])
 
-  console.log(itemSelected)
-
   function OpenModal(item) {
     setItemSelected(item)
     setModalIsVisible(true)

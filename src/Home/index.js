@@ -1,5 +1,4 @@
 import React from 'react'
-import {Image} from 'react-native'
 import { useNavigation } from '@react-navigation/core';
 
 // ESTILIZAÇÃO
@@ -8,7 +7,8 @@ import {
     Container,
     TitleView,
     Button,
-    SubText
+    SubText,
+    Image
 } from './style'
 
 export default function Home() {
@@ -18,20 +18,16 @@ export default function Home() {
     return (
         <Container>
             <TitleView>
-                <Image source={require('./../../assets/menu-icon.png')} style={{width: 600, height: 187}} />
+                <Image source={require('./../../assets/home.png')}/>
             </TitleView>
             
             <Button
                 onPress={() =>
                 navigation.navigate('OGame')}
+                style={{marginTop: 72}}
             >
                 <Image source={require('./../../assets/logoLol-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
                 <SubText>O Game</SubText>
-            </Button>
-
-            <Button>
-                <Image source={require('./../../assets/ojogo-icon.png')} style={{width: 50, height: 50, marginRight: 10}}/>
-                <SubText>Guia</SubText>
             </Button>
                     
             <Button
