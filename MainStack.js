@@ -7,7 +7,7 @@ import Itens from './src/Itens';
 import Feiticos from './src/Feiticos';
 import Runas from './src/Runas';
 import OGame from './src/OGame'
-
+import Arvore from './src/Runas/Arvore';
 
 const Stack = createStackNavigator();
 
@@ -26,7 +26,7 @@ export default function MainStack() {
             <Stack.Screen name="Feiticos" component={Feiticos}/>
             <Stack.Screen name="Runas" component={Runas}/>
             <Stack.Screen name="OGame" component={OGame}/> 
-
+            <Stack.Screen name="Arvore" component={Arvore}/>
         </Stack.Navigator>
     )
 }

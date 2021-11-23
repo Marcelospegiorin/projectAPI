@@ -14,6 +14,12 @@ import {
   ViewNameItem,
   ViewImage,
   ContainerLoading,
+  ItemTitulo,
+  ItemName2,
+  Input,
+  InputView,
+  InputSubView,
+  ItemIcon,
 } from './style';
 
 import {
@@ -33,7 +39,9 @@ export default function Itens() {
 
   const [loading ,setLoading] = useState(true)
 
+  const [itemFiltrado, setItemFiltrado] = useState('')
   const [modalIsVisible, setModalIsVisible] = useState(false)
+
 
   useEffect(() => {
     async function loadItems() {
@@ -46,16 +54,18 @@ export default function Itens() {
     loadItems();
   }, []);
 
+  const listaFiltrada = itemFiltrado
+    ? items.filter(itens =>
+        itens[1].name.toLowerCase().includes(itemFiltrado.toLowerCase())
+      )
+  : items;
+
   const [itemSelected, setItemSelected] = useState([
-    {teste: ''},
     {name: ''},
     {gold: ''},
-    {plaintext: ''}
   ])
-
-  console.log(itemSelected)
-
   function OpenModal(item) {
+    console.log(item)
     setItemSelected(item)
     setModalIsVisible(true)
   }
@@ -63,6 +73,14 @@ export default function Itens() {
   return (
     <Container>
       <Title>Itens</Title>
+      <InputView>
+        <InputSubView>
+          <Input 
+            placeholder='Insira o nome do item'
+            onChangeText={(text) => setItemFiltrado(text)}
+          />
+        </InputSubView>
+      </InputView>
       {loading == true
       ?
         <ContainerLoading>
@@ -71,8 +89,8 @@ export default function Itens() {
       :
         <WrapScroll>
 
-          {items.map(item => (
-            <WrapItem onPress={() => OpenModal(item)}>
+          {listaFiltrada.map(item => (
+            <WrapItem onPress={() => OpenModal(item)} key={item.name}>
               <ViewImage>
                 <ItemImage
                   source={{
@@ -89,21 +107,29 @@ export default function Itens() {
           )}
         </WrapScroll>
       }
-
-      <Modal 
-        animationType="slide"
-        visible={modalIsVisible}
-        transparent={true}
-        onRequestClose={() => setModalIsVisible(false)}
-      >
-        <ModalContent>
-          <ContainerModal>
-            <NomeItem>Nome do item: {itemSelected[1].name}</NomeItem>
-            <ItemName>Descrição: {itemSelected[1].plaintext}</ItemName>
-          </ContainerModal>
-        </ModalContent>
-      </Modal>
-
+    {
+      itemSelected[1].image ? 
+      (
+        <Modal 
+          animationType="slide"
+          visible={modalIsVisible}
+          transparent={true}
+          onRequestClose={() => setModalIsVisible(false)}
+          onDismiss={() => setModalIsVisible(false)}
+        >
+          <ModalContent>
+            <ContainerModal>
+              <ItemTitulo>{itemSelected[1].name}</ItemTitulo>
+              <ItemIcon source={{
+                  uri: `http://ddragon.leagueoflegends.com/cdn/11.20.1/img/item/${itemSelected[1].image.full}`,
+              }}/>
+              <ItemName2>Preço de compra: {itemSelected[1].gold.base} de ouro</ItemName2>
+              <ItemName2>Descrição: {itemSelected[1].plaintext}</ItemName2>
+            </ContainerModal>
+          </ModalContent>
+        </Modal>
+      ) : null
+    }
     </Container>
   );
 }

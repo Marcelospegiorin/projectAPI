@@ -40,7 +40,7 @@ export const SubView = styled.View`
     padding: 10px
     border-radius: 15px
     width: 100%;
-    height: 200px;
+    height: auto;
     align-items: center;
     margin-top: 50px;
 `;

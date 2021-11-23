@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Title = styled.Text`
+export const Title = styled.Text `
   color: #CAA92E;
   font-size: 40px;
   text-align: center;
@@ -28,6 +28,7 @@ export const WrapScroll = styled.View`
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+
 `;
 
 export const WrapItem = styled.TouchableOpacity`
@@ -38,15 +39,14 @@ export const WrapItem = styled.TouchableOpacity`
   align-items: center;
   border: 2px #1BCCE5 solid;
   border-radius: 10px;
-  flex-direction: row;
-  
 `;
 
 export const ItemImage = styled.Image`
-  height: 40px;
-  width: 40px;
-  margin-left: 30px;
-  margin-right: 15px;
+  height: 57px;
+  width: 57px;
+  margin-left: 20px;
+  margin-right: 20px;
+  
 `;
 
 export const ViewNameItem = styled.View`
@@ -78,4 +78,26 @@ export const NomeRuna = styled.Text`
   margin-top: 5px;
   font-size: 30px;
   margin-bottom: 20px;
+`;
+
+export const NomeSlot = styled.Text`
+  color: #CAA92E
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+  textTransform: capitalize
+`;
+
+export const ItemTitulo = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  font-size: 45px
+  margin-bottom: 35px
+  textDecorationLine: underline
+`;
+
+export const ItemIcon = styled.Image`
+  width: 40%
+  height: 40%
+  margin-top: 10px
 `;

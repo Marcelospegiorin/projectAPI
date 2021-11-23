@@ -64,4 +64,49 @@ export const ItemName = styled.Text`
   text-align: center;
   color: #CAA92E;
   margin-top: 5px
+  font-size: 15px
+
+`;
+
+export const ItemTitulo = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  font-size: 40px
+  margin-bottom: 35px
+  textDecorationLine: underline
+`;
+
+export const ItemName2 = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  margin-top: 10px
+  font-size: 23px
+
+`;
+
+export const ItemIcon = styled.Image`
+  width: 23%
+  height: 23%
+  margin-bottom: 15px
+`;
+
+export const InputSubView = styled.View`
+  width: 90%;
+  height: 35px;
+  background-color: #FFF;
+  border-radius: 5px
+  justify-content: center
+  align-items: center
+
+`;
+
+export const Input = styled.TextInput`
+  width: 95%
+  height: 90%
+
+`;
+
+export const InputView = styled.View`
+  align-items: center
+  margin-bottom: 7px
 `;

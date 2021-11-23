@@ -23,4 +23,10 @@ export const NomeItem = styled.Text`
   margin-top: 5px;
   font-size: 30px;
   margin-bottom: 20px;
+    background-color: #011425;
+    min-height: 400px
+    align-items: center
+    border: 2px #1BCCE5 solid
+    border-radius: 10px
+    
 `;

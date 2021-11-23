@@ -12,13 +12,13 @@ import {
 } from './style'
 
 export default function Home() {
-        
+    
     const navigation = useNavigation()
     
     return (
         <Container>
             <TitleView>
-                <Image source={require('./../../assets/league-of-legends-logo.jpg')} style={{width: 325, height: 175}} />
+                <Image source={require('./../../assets/menu-icon.png')} style={{width: 600, height: 187}} />
             </TitleView>
             
             <Button
