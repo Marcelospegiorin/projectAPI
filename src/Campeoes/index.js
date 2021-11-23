@@ -43,12 +43,14 @@ export default function Campeoes() {
     async function loadItems() {
       const { data } = await axios.get(
         'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/champion.json'
+        
       );
       setLoading(false)
       setChampions(await Object.entries(data.data));
     }
     loadItems();
   }, []);
+  
 
   const listaFiltrada = nomeFiltrado
     ? champion.filter(champs =>
@@ -154,4 +156,6 @@ export default function Campeoes() {
     </Container>
     
   );
+
+
 }

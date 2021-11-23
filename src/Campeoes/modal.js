@@ -40,4 +40,12 @@ export const SkinName = styled.Text`
   font-weight: bold;
   text-align: center;
   color: #CAA92E;
+`
+
+export const NomeItem = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  margin-top: 5px;
+  font-size: 30px;
+  margin-bottom: 20px;
 `;
