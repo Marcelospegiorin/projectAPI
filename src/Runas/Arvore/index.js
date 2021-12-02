@@ -9,6 +9,7 @@ import {
   NomeSlot,
   ItemTitulo,
   ItemIcon,
+  DescricaoRunas
 } from './style';
 
 import {
@@ -73,6 +74,10 @@ export default function Arvore() {
                           <ItemIcon source={{
                               uri: `https://ddragon.canisback.com/img/${selectRune.icon}`,
                           }}/>
+                          <DescricaoRunas>
+                          Ao causar dano a um Campeão com uma habilidade, um cometa é lançado onde ele estiver.
+                          </DescricaoRunas>
+
                         </ContainerModal>
                       </ModalContent>
                     </Modal>
