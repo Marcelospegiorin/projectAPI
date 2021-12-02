@@ -101,3 +101,10 @@ export const ItemIcon = styled.Image`
   height: 40%
   margin-top: 10px
 `;
+
+export const DescricaoRunas = styled.Text`
+  text-align: center;
+  color: #CAA92E;
+  margin-top: 10px
+  font-size: 23px
+`;
