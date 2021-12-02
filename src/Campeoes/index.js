@@ -42,7 +42,7 @@ export default function Campeoes() {
   useEffect(() => {
     async function loadItems() {
       const { data } = await axios.get(
-        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/champion.json'
+        'http://ddragon.leagueoflegends.com/cdn/11.23.1/data/pt_BR/champion.json'
         
       );
       setLoading(false)
@@ -64,7 +64,7 @@ export default function Campeoes() {
   async function openModal(item) {
     setNameChampion(item[0])
     const { data } = await axios.get(
-      `http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/champion/${item[1].name}.json`
+      `http://ddragon.leagueoflegends.com/cdn/11.23.1/data/pt_BR/champion/${item[1].name}.json`
     );
     setChampionsSkins(await Object.entries(data.data));
     setLoadingModal(false)
@@ -98,7 +98,7 @@ export default function Campeoes() {
               <ViewImage>
                 <ItemImage
                   source={{
-                    uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/champion/${item[1].image.full}`,
+                    uri: `http://ddragon.leagueoflegends.com/cdn/11.23.1/img/champion/${item[1].image.full}`,
                   }}
                 />
               </ViewImage>
