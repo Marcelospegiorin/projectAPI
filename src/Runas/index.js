@@ -37,7 +37,7 @@ export default function Runas() {
   useEffect(() => {
     async function loadItems() {
       const { data } = await axios.get(
-        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/runesReforged.json'
+        'http://ddragon.leagueoflegends.com/cdn/11.23.1/data/pt_BR/runesReforged.json'
       );
       setLoading(false)
       setRunas(data);
