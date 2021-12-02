@@ -46,7 +46,7 @@ export default function Itens() {
   useEffect(() => {
     async function loadItems() {
       const { data } = await axios.get(
-        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/item.json'
+        'http://ddragon.leagueoflegends.com/cdn/11.23.1/data/pt_BR/item.json'
       );
       setLoading(false)
       setItems(await Object.entries(data.data));
@@ -93,7 +93,7 @@ export default function Itens() {
               <ViewImage>
                 <ItemImage
                   source={{
-                    uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/item/${item[1].image.full}`,
+                    uri: `http://ddragon.leagueoflegends.com/cdn/11.23.1/img/item/${item[1].image.full}`,
                   }}
                 />
               </ViewImage>
@@ -120,7 +120,7 @@ export default function Itens() {
             <ContainerModal>
               <ItemTitulo>{itemSelected[1].name}</ItemTitulo>
               <ItemIcon source={{
-                  uri: `http://ddragon.leagueoflegends.com/cdn/11.20.1/img/item/${itemSelected[1].image.full}`,
+                  uri: `http://ddragon.leagueoflegends.com/cdn/11.23.1/img/item/${itemSelected[1].image.full}`,
               }}/>
               <ItemName2>Preço de compra: {itemSelected[1].gold.base} de ouro</ItemName2>
               <ItemName2>Descrição: {itemSelected[1].plaintext}</ItemName2>
