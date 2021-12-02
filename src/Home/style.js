@@ -27,8 +27,8 @@ export const Button = styled.TouchableOpacity`
 
 export const TitleView = styled.View`
     width: 100%;
-    height: 20%;
-
+    height: 139px;
+    
     align-items: center;
 
     margin-top: 40px;
