@@ -36,7 +36,7 @@ export default function Feiticos() {
   useEffect(() => {
     async function loadItems() {
       const { data } = await axios.get(
-        'http://ddragon.leagueoflegends.com/cdn/11.22.1/data/pt_BR/summoner.json'
+        'http://ddragon.leagueoflegends.com/cdn/11.23.1/data/pt_BR/summoner.json'
       );
       setLoading(false)
       setItems(await Object.entries(data.data));
@@ -74,7 +74,7 @@ export default function Feiticos() {
               <ViewImage>
                 <SpellImage
                   source={{
-                    uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${item[1].image.full}`,
+                    uri: `http://ddragon.leagueoflegends.com/cdn/11.23.1/img/spell/${item[1].image.full}`,
                   }}
                 />
               </ViewImage>
@@ -97,7 +97,7 @@ export default function Feiticos() {
                 <ContainerModal>
                   <NomeFeitico>Nome do feitiço: {itemSelected[1].name}</NomeFeitico>
                   <ItemIcon source={{
-                        uri: `http://ddragon.leagueoflegends.com/cdn/11.22.1/img/spell/${itemSelected[1].image.full}`,
+                        uri: `http://ddragon.leagueoflegends.com/cdn/11.23.1/img/spell/${itemSelected[1].image.full}`,
                   }}/>
                   <SpellName2>Descrição: {itemSelected[1].description}</SpellName2>
                   <SpellName2>Tempo de recarga: {itemSelected[1].cooldown} segundos</SpellName2>
